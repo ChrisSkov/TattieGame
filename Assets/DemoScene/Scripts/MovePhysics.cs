@@ -16,7 +16,7 @@ public class MovePhysics : MonoBehaviour
     Animator anim;
     void Start()
     {
-        anim = GetComponent<Animator>();
+      anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -52,7 +52,7 @@ public class MovePhysics : MonoBehaviour
     }
     private void Move()
     {
-
+        
         //map the input to a direction
         Vector3 movement = new Vector3(0, 0, VerticalAxis()) * speed * Time.deltaTime;
         //find out where our new position is going to be. our current position + our movement

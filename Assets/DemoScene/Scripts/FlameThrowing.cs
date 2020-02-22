@@ -20,6 +20,7 @@ public class FlameThrowing : MonoBehaviour
     void Update()
     {
 
+        //print(anim.GetBool("Flaming"));
         FlameAnim();
     }
 
@@ -30,12 +31,11 @@ public class FlameThrowing : MonoBehaviour
             anim.SetBool("Flaming", true);
 
             // flameIsActive = true;
-            print("eow");
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             anim.SetBool("Flaming", false);
-            flameObj.SetActive(false);
+            // flameObj.SetActive(false);
             print("ses");
         }
     }
