@@ -45,18 +45,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\AimControl.cs" />
-     <Compile Include="Assets\AudioControl.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\AIControl.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\CameraControl.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\FlameThrowing.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\MovePhysics.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\Movement.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\PatrolPath.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\Projectile.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\RigidBodyMovement.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\ShootTeleport.cs" />
-     <Compile Include="Assets\DemoScene\Scripts\TestMovement.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
@@ -69,8 +57,22 @@
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+     <Compile Include="Assets\Scripts\AIControl.cs" />
+     <Compile Include="Assets\Scripts\AimControl.cs" />
+     <Compile Include="Assets\Scripts\AudioControl.cs" />
+     <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\FlameNoAnim.cs" />
+     <Compile Include="Assets\Scripts\FlameThrowing.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\MovePhysics.cs" />
+     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\PatrolPath.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\RigidBodyMovement.cs" />
+     <Compile Include="Assets\Scripts\ShootTPv2.cs" />
+     <Compile Include="Assets\Scripts\ShootTeleport.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-     <Compile Include="Assets\ShootTPv2.cs" />
+     <Compile Include="Assets\Scripts\TestMovement.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
      <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
