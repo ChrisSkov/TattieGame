@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class AimControl : MonoBehaviour
 {
-   // Camera cam;
-    [SerializeField] GameObject aim;
+    //    // Camera cam;
+    [SerializeField] GameObject ProjectileSocket;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        aim.transform.rotation = Camera.main.transform.rotation;
+        ProjectileSocket.transform.rotation = Camera.main.transform.rotation;
+
     }
+
 }

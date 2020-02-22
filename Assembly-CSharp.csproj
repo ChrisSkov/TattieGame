@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\FlameNoAnim.cs" />
      <Compile Include="Assets\Scripts\FlameThrowing.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\MovePhysics.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\PatrolPath.cs" />

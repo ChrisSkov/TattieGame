@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
     [SerializeField] float currentHealth;
     void Start()
     {
-
         currentHealth = maxHealth;
 
     }
@@ -23,5 +22,19 @@ public class Health : MonoBehaviour
         {
             currentHealth -= 10f;
         }
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
     }
 }

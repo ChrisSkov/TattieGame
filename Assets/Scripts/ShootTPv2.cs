@@ -29,7 +29,7 @@ public class ShootTPv2 : MonoBehaviour
         {
             timer = 0;
             clone = Instantiate(originalBullet, projectileSocket.transform.position, projectileSocket.transform.rotation);
-            clone.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
+            clone.GetComponent<Rigidbody>().AddForce(projectileSocket.transform.forward * projectileSpeed, ForceMode.Impulse);
 
         }
         if(Input.GetKeyDown(KeyCode.E))
