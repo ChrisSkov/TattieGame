@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\AIControl.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />
      <Compile Include="Assets\Scripts\AudioControl.cs" />
+     <Compile Include="Assets\Scripts\CamController.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\FlameNoAnim.cs" />
      <Compile Include="Assets\Scripts\FlameThrowing.cs" />

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2855644895353186158}
   - component: {fileID: 2855644895353186193}
   - component: {fileID: 2855644895353186154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TeleportProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
