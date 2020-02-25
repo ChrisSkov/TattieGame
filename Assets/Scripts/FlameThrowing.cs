@@ -35,7 +35,7 @@ public class FlameThrowing : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             anim.SetBool("Flaming", false);
-            // flameObj.SetActive(false);
+            flameObj.SetActive(false);
             print("ses");
         }
     }

@@ -24,6 +24,10 @@ public class Health : MonoBehaviour
         }
     }
 
+    public Slider GetHpBar()
+    {
+        return hpBar;
+    }
     public float GetMaxHealth()
     {
         return maxHealth;

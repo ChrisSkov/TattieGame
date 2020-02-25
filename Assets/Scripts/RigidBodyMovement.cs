@@ -12,11 +12,12 @@ public class RigidBodyMovement : MonoBehaviour
     [SerializeField] float slamForce = 8.0f;
 
     private Vector3 moveDirection = Vector3.zero;
-
+    Animator anim;
     bool hasSlammed = false;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -38,6 +39,7 @@ public class RigidBodyMovement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
             moveDirection = transform.TransformDirection(moveDirection);
+            anim.SetFloat("forwardSpeed", Mathf.Abs(moveDirection.magnitude * speed));
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
