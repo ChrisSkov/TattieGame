@@ -4,30 +4,29 @@ using UnityEngine.AI;
 using UnityEngine;
 public class AIControl : MonoBehaviour
 {
-    [SerializeField] float suspicionTime = 3f;
+    //[SerializeField] float suspicionTime = 3f;
     [SerializeField] PatrolPath patrolPath;
-    [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float waypointDwellTime = 4f;
-    [Range(0, 1)]
+    [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float patrolSpeedFraction = 0.2f;
+    [SerializeField] float chaseRange = 10f;
+    [SerializeField] float damage = 10f;
+    [SerializeField] float attackSpeed = 1f;
+    [Range(0, 1)]
+    [SerializeField] float attackRange = 3f;
     NavMeshAgent agent;
-
-
-    //  Health health;
-
-    //  GameObject player;
-
-
+    Health playerHP;
+    GameObject player;
     Vector3 guardPosition;
     float timeSinceLastSawPlayer = Mathf.Infinity;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
     int currentWaypointIndex = 0;
+    float attackTimer = Mathf.Infinity;
 
     private void Start()
     {
-        //  health = GetComponent<Health>();
-
-        // player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
+        playerHP = player.GetComponent<Health>();
         agent = GetComponent<NavMeshAgent>();
         guardPosition = transform.position;
     }
@@ -35,9 +34,13 @@ public class AIControl : MonoBehaviour
     {
         UpdateTimers();
         PatrolBehaviour();
+        PlayerInChaseRange();
+        ChaseBehavior();
+        AttackBehavior();
     }
     private void UpdateTimers()
     {
+        attackTimer += Time.deltaTime;
         // timeSinceLastSawPlayer += Time.deltaTime;
         timeSinceArrivedAtWaypoint += Time.deltaTime;
     }
@@ -78,4 +81,38 @@ public class AIControl : MonoBehaviour
         float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWaypoint());
         return distanceToWaypoint < waypointTolerance;
     }
+
+    bool PlayerInChaseRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) < chaseRange;
+    }
+
+    bool PlayerInAttackRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) < attackRange;
+
+    }
+    void ChaseBehavior()
+    {
+        if (PlayerInChaseRange())
+        {
+            agent.SetDestination(player.transform.position);
+        }
+    }
+
+    void AttackBehavior()
+    {
+        if (PlayerInAttackRange() && attackTimer >= attackSpeed)
+        {
+            playerHP.TakeDamage(damage);
+            attackTimer = 0;
+        }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
 }

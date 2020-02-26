@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100f;
-    [SerializeField] float currentHealth;
+    [SerializeField] float currentHealth {get;set;}
     void Start()
     {
         currentHealth = maxHealth;
@@ -20,6 +20,10 @@ public class Health : MonoBehaviour
         {
             currentHealth -= 10f;
         }
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
 
@@ -32,8 +36,15 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
 
+    
+
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+    }
+
+    public void Heal(float healAmount)
+    {
+        currentHealth += healAmount;
     }
 }
