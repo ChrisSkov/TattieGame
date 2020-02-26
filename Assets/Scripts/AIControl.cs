@@ -4,7 +4,7 @@ using UnityEngine.AI;
 using UnityEngine;
 public class AIControl : MonoBehaviour
 {
-    //[SerializeField] float suspicionTime = 3f;
+    [SerializeField] float suspicionTime = 3f;
     [SerializeField] PatrolPath patrolPath;
     [SerializeField] float waypointDwellTime = 4f;
     [SerializeField] float waypointTolerance = 1f;
