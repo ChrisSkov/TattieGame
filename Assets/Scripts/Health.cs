@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public Slider hpBar;
     [SerializeField] float maxHealth = 100f;
     [SerializeField] float currentHealth;
     void Start()
@@ -16,7 +15,6 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        hpBar.value = currentHealth;
 
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -24,10 +22,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public Slider GetHpBar()
-    {
-        return hpBar;
-    }
+
     public float GetMaxHealth()
     {
         return maxHealth;

@@ -1711,7 +1711,6 @@ GameObject:
   - component: {fileID: 7615656204033749052}
   - component: {fileID: 8026206778378522548}
   - component: {fileID: 3795300434018435628}
-  - component: {fileID: 7615656204033749054}
   - component: {fileID: 6154114012776147677}
   - component: {fileID: 7615656204033749055}
   - component: {fileID: 7615656204033749041}
@@ -1906,19 +1905,6 @@ MonoBehaviour:
   speed: 15
   jumpForce: 8
   slamForce: 15
---- !u!114 &7615656204033749054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333174066656569606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faac101102598d94dbb021f8bd6b31bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProjectileSocket: {fileID: 6678867001682815065}
 --- !u!114 &6154114012776147677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,6 +1948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpText: {fileID: 0}
+  hpBar: {fileID: 0}
 --- !u!114 &6585329007707574061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1974,7 +1961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823c6372b7c10be44aff3245100e2413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
 --- !u!114 &2758630223402484051
@@ -2005,7 +1991,7 @@ MonoBehaviour:
   projectileSocket: {fileID: 6678867001682815065}
   originalBullet: {fileID: 2855644895353186192, guid: 64807915731925d4092c69f44ba420ac,
     type: 3}
-  projectileSpeed: 12
+  projectileSpeed: 35
   cooldown: 2
   range: 100
 --- !u!1 &1333174066656569608

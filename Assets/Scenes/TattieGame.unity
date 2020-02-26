@@ -51779,16 +51779,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6585329007707574061, guid: 5c8c8b568d46a4345abc648a353d5d2a,
-        type: 3}
-      propertyPath: hpBar
-      value: 
-      objectReference: {fileID: 396528383}
     - target: {fileID: 7615656204033749041, guid: 5c8c8b568d46a4345abc648a353d5d2a,
         type: 3}
       propertyPath: hpText
       value: 
       objectReference: {fileID: 1556601535}
+    - target: {fileID: 7615656204033749041, guid: 5c8c8b568d46a4345abc648a353d5d2a,
+        type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 396528383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8c8b568d46a4345abc648a353d5d2a, type: 3}
 --- !u!1001 &8035253009969047694
@@ -51806,19 +51806,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 396528383}
-    - target: {fileID: 741194100, guid: 9030aadf101be1841ab63e44ed855ac3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5625965849280841876, guid: 9030aadf101be1841ab63e44ed855ac3,
         type: 3}
       propertyPath: m_Name
       value: Player variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5625965849280841876, guid: 9030aadf101be1841ab63e44ed855ac3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5625965849280841880, guid: 9030aadf101be1841ab63e44ed855ac3,
         type: 3}
@@ -51875,10 +51866,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601536011398850795, guid: 9030aadf101be1841ab63e44ed855ac3,
-        type: 3}
-      propertyPath: hpBar
-      value: 
-      objectReference: {fileID: 396528383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9030aadf101be1841ab63e44ed855ac3, type: 3}

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &741194103
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823c6372b7c10be44aff3245100e2413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
 --- !u!114 &8035253009969047696
@@ -319,19 +318,6 @@ MonoBehaviour:
   speed: 15
   jumpForce: 8
   slamForce: 15
---- !u!114 &8035253009969047698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5625965849280841876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faac101102598d94dbb021f8bd6b31bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProjectileSocket: {fileID: 1991408122647918870}
 --- !u!114 &8035253009969047699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174880405574062403, guid: b0fe32836d79e1c45a5e0d3833730e7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6174880405574062414, guid: b0fe32836d79e1c45a5e0d3833730e7d,
         type: 3}
