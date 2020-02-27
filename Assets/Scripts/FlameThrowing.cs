@@ -5,32 +5,26 @@ using UnityEngine;
 public class FlameThrowing : MonoBehaviour
 {
     [SerializeField] GameObject flameObj;
-    [SerializeField] float flameDistance = 10f;
     [SerializeField] float flameDamage = 10f;
     [SerializeField] float tickTime = 0.5f;
-    bool flameIsActive;
+    [SerializeField] float flameRadius = 3f;
     Animator anim;
-    Transform flameAim;
-    float timer = Mathf.Infinity;
-    bool flameRoutineIsRunning = false;
+    [SerializeField] Transform flameAim;
+    [SerializeField] float timer = Mathf.Infinity;
 
     // Start is called before the first frame update
     void Start()
     {
-        flameAim = flameObj.transform.GetChild(0);
+        //flameAim = flameObj.transform.GetChild(0);
         anim = GetComponent<Animator>();
         flameObj.SetActive(false);
     }
-
-    // Update is called once per frame
-
     void Update()
     {
-        // print(timer);
-        timer += Time.deltaTime;
-        //print(anim.GetBool("Flaming"));
         FlameAnim();
-        Debug.DrawRay(flameAim.transform.position, flameAim.transform.TransformDirection(Vector3.forward) * flameDistance, Color.yellow);
+
+        OverlapCapsule();
+
     }
 
 
@@ -41,54 +35,71 @@ public class FlameThrowing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             anim.SetBool("Flaming", true);
-            // flameIsActive = true;
+            //OverlapCapsule();   
+            // OverlapCapsule();
+            // StartTick();
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
             anim.SetBool("Flaming", false);
             flameObj.SetActive(false);
-            // print("ses");
         }
     }
     void ActivateFlame()
     {
         if (anim.GetBool("Flaming"))
         {
-            flameObj.SetActive(true);//TODO: Refactor repeating code
+            flameObj.SetActive(true);
+
 
         }
 
         if (anim.GetBool("Flaming") == false)
         {
-            flameObj.SetActive(false);//TODO: Refactor repeating code
-            StopCoroutine("DamageTick");
+            flameObj.SetActive(false);
         }
 
     }
 
-    private void OnTriggerStay(Collider other)
+
+    void OverlapCapsule()
     {
-        if (other.gameObject.layer == 11)
+        LayerMask layer = LayerMask.GetMask("Enemy");
+        if (Input.GetKey(KeyCode.Q))
         {
-            Health enemyHealth = other.gameObject.GetComponent<Health>();
-            if (!flameRoutineIsRunning)
+            timer += Time.deltaTime;
+
+            if (timer >= tickTime)
             {
 
-                StartCoroutine(FlameDamage(enemyHealth));
+                foreach (Collider c in Physics.OverlapCapsule(flameObj.transform.position, flameAim.transform.position, flameRadius, layer))
+                {
+                    print("hej");
+                    GameObject enemy = c.gameObject;
+                    if (c.gameObject != null)
+                    {
+                        Health enemyHealth = enemy.GetComponent<Health>();
+                        print("step 2");
+                        enemyHealth.TakeDamage(flameDamage);
+                    }
+
+                }
+                timer = 0;
             }
         }
+
+
     }
 
-    private void OnTriggerExit(Collider other)
+    /// <summary>
+    /// Callback to draw gizmos that are pickable and always drawn.
+    /// </summary>
+    void OnDrawGizmos()
     {
-        flameRoutineIsRunning = false;
-        StopCoroutine("FlameDamage");
-    }
-    IEnumerator FlameDamage(Health enemyHealth)
-    {
-        flameRoutineIsRunning = true;
-        enemyHealth.TakeDamage(flameDamage);
-        yield return new WaitForSeconds(tickTime);
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(flameObj.transform.position, flameAim.position);
+        Gizmos.DrawWireSphere(flameAim.position, flameRadius);
+        Gizmos.DrawWireSphere(flameObj.transform.position, flameRadius);
     }
 
 

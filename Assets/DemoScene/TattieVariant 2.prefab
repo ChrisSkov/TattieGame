@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041669449}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.14, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1524475968524511537}
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOffSet: 0.42
   groundCheckDistance: 0.87
-  speed: 15
+  speed: 10
   jumpForce: 8
   slamForce: 15
 --- !u!114 &6154114012776147677
@@ -2005,9 +2005,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flameObj: {fileID: 1524475968524152909}
-  flameDistance: 10
   flameDamage: 10
-  tickTime: 0.5
+  tickTime: 0.3
+  flameRadius: 0.5
+  flameAim: {fileID: 1041669450}
+  timer: Infinity
 --- !u!114 &7425179693072070449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7238,11 +7240,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 1524475968524152909}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 8.5
   m_Direction: 0
-  m_Center: {x: 5, y: 0, z: 0.03}
+  m_Center: {x: 3.92, y: 0, z: 0.03}
 --- !u!1 &3321902371519062264
 GameObject:
   m_ObjectHideFlags: 0
