@@ -12,6 +12,7 @@ public class FlameThrowing : MonoBehaviour
     Animator anim;
     Transform flameAim;
     float timer = Mathf.Infinity;
+    bool flameRoutineIsRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class FlameThrowing : MonoBehaviour
         FlameAnim();
         Debug.DrawRay(flameAim.transform.position, flameAim.transform.TransformDirection(Vector3.forward) * flameDistance, Color.yellow);
     }
-  
+
 
 
 
@@ -54,7 +55,7 @@ public class FlameThrowing : MonoBehaviour
         if (anim.GetBool("Flaming"))
         {
             flameObj.SetActive(true);//TODO: Refactor repeating code
-            
+
         }
 
         if (anim.GetBool("Flaming") == false)
@@ -63,6 +64,31 @@ public class FlameThrowing : MonoBehaviour
             StopCoroutine("DamageTick");
         }
 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 11)
+        {
+            Health enemyHealth = other.gameObject.GetComponent<Health>();
+            if (!flameRoutineIsRunning)
+            {
+
+                StartCoroutine(FlameDamage(enemyHealth));
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        flameRoutineIsRunning = false;
+        StopCoroutine("FlameDamage");
+    }
+    IEnumerator FlameDamage(Health enemyHealth)
+    {
+        flameRoutineIsRunning = true;
+        enemyHealth.TakeDamage(flameDamage);
+        yield return new WaitForSeconds(tickTime);
     }
 
 
