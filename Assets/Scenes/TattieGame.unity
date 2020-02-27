@@ -36519,30 +36519,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1497936373, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1497936374, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 596242993}
-    - target: {fileID: 1497936374, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1497936374, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
-      propertyPath: waypointTolerance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1497936374, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
-      propertyPath: patrolSpeedFraction
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 1497936374, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
-      propertyPath: waypointDwellTime
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7713133421163982951, guid: f91eb0f4909b80848a4fa1c754dab8a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36602,11 +36582,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713133421163982973, guid: f91eb0f4909b80848a4fa1c754dab8a9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91eb0f4909b80848a4fa1c754dab8a9, type: 3}
