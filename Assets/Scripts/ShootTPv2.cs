@@ -29,9 +29,9 @@ public class ShootTPv2 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && timer> cooldown)
         {
         
-            timer = 0;
             clone = Instantiate(originalBullet, projectileSocket.transform.position, projectileSocket.transform.rotation);
             clone.GetComponent<Rigidbody>().AddForce(projectileSocket.transform.forward * projectileSpeed, ForceMode.Impulse);
+            timer = 0;
 
         }
         if(Input.GetKeyDown(KeyCode.E) && clone != null)
