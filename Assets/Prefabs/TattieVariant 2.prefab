@@ -2383,7 +2383,7 @@ MonoBehaviour:
   rayOffSet: 0.42
   groundCheckDistance: 0.87
   speed: 10
-  jumpForce: 8
+  jumpForce: 8.83
   slamForce: 15
 --- !u!114 &6154114012776147677
 MonoBehaviour:
