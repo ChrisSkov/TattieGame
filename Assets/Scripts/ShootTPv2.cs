@@ -10,8 +10,6 @@ public class ShootTPv2 : MonoBehaviour
     [SerializeField] float projectileSpeed;
 
     [SerializeField] float cooldown = 2f;
-    [SerializeField] float range = 100f;
-    //public float timer = Mathf.Infinity;
     GameObject clone;
 
     Rigidbody rb;
