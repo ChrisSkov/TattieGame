@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\RotateText.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
@@ -78,10 +79,10 @@
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\TestMovement.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <None Include="Assets\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
-     <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
-     <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
-     <None Include="Assets\Animations\README - Usage Rights for these assets 1.txt" />
+     <None Include="Assets\AssetPacks\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
+     <None Include="Assets\AssetPacks\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
+     <None Include="Assets\AssetPacks\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
+     <None Include="Assets\AssetPacks\Animations\README - Usage Rights for these assets 1.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

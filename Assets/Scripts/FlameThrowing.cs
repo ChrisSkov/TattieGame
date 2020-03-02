@@ -6,7 +6,7 @@ public class FlameThrowing : MonoBehaviour
 {
     [SerializeField] GameObject flameObj;
     [SerializeField] float flameDamage = 10f;
-    [SerializeField] float tickTime = 0.5f;
+    [SerializeField] float tickTime = 0.2f;
     [SerializeField] float flameRadius = 3f;
     Animator anim;
     [SerializeField] Transform flameAim;
