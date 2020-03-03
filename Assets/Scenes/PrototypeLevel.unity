@@ -496,6 +496,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 766124587, guid: 5c8c8b568d46a4345abc648a353d5d2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 832158161, guid: 5c8c8b568d46a4345abc648a353d5d2a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -563,6 +567,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758630223402484051, guid: 5c8c8b568d46a4345abc648a353d5d2a,
+        type: 3}
+      propertyPath: tickTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795300434018435628, guid: 5c8c8b568d46a4345abc648a353d5d2a,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8c8b568d46a4345abc648a353d5d2a, type: 3}
@@ -708,6 +722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713133421163982971, guid: f91eb0f4909b80848a4fa1c754dab8a9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 7713133421163982973, guid: f91eb0f4909b80848a4fa1c754dab8a9,
         type: 3}

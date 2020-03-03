@@ -50,6 +50,16 @@ public class RigidBodyMovement : MonoBehaviour
         }
 
 
+        if (moveDirection != Vector3.zero)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+
+            anim.SetBool("isRunning", false);
+        }
+
 
         rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
     }
