@@ -123,7 +123,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
     m_Threshold: 0.33333334
-    m_Position: {x: 0, y: 1.5584015}
+    m_Position: {x: 0, y: 0.5}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -131,7 +131,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 1cb8ed3cbba15f0479fbae54e0a963df, type: 3}
     m_Threshold: 0.6666667
-    m_Position: {x: -0.3, y: 9.57}
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -140,7 +140,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 9b7e1f657df0acb458770f158ffa5064,
       type: 3}
     m_Threshold: 1
-    m_Position: {x: -8.6, y: 5}
+    m_Position: {x: -1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -149,7 +149,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: a14fdc8a4259d20448f8ec0bd220d7a9,
       type: 3}
     m_Threshold: 1.3333333
-    m_Position: {x: 6.96, y: 4.71}
+    m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -158,7 +158,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 972140980c478814db7ea8477d890eb7,
       type: 3}
     m_Threshold: 1.6666665
-    m_Position: {x: 0, y: -9.31}
+    m_Position: {x: 0, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -167,7 +167,7 @@ BlendTree:
     m_Motion: {fileID: -8115676203753973295, guid: b59ce1023aa61bb40be7e04f02bfe64f,
       type: 3}
     m_Threshold: 1.9999998
-    m_Position: {x: -9.57, y: -4.55}
+    m_Position: {x: -1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
@@ -176,7 +176,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: adcc7856acf900f429949fd44d112906,
       type: 3}
     m_Threshold: 2.333333
-    m_Position: {x: 8.45, y: -4.03}
+    m_Position: {x: 1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: forwardSpeed
