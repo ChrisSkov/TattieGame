@@ -39,7 +39,8 @@ public class RigidBodyMovement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
             moveDirection = transform.TransformDirection(moveDirection);
-            anim.SetFloat("forwardSpeed", Mathf.Abs(moveDirection.magnitude * speed));
+            anim.SetFloat("forwardSpeed", Input.GetAxis("Vertical") * speed);
+            anim.SetFloat("horizontalSpeed", Input.GetAxis("Horizontal") * speed);
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;

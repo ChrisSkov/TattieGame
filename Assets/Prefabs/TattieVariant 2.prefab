@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOffSet: 0.42
   groundCheckDistance: 0.87
-  speed: 10
+  speed: 20
   jumpForce: 8.83
   slamForce: 15
 --- !u!114 &6154114012776147677
@@ -2475,9 +2475,8 @@ MonoBehaviour:
   projectileSocket: {fileID: 6678867001682815065}
   originalBullet: {fileID: 2855644895353186192, guid: 64807915731925d4092c69f44ba420ac,
     type: 3}
-  projectileSpeed: 35
+  projectileSpeed: 60
   cooldown: 2
-  range: 100
 --- !u!1 &1333174066656569608
 GameObject:
   m_ObjectHideFlags: 0
