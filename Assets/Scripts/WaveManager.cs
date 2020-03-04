@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject[] enemies;
     [SerializeField] GameObject[] spawnPoints;
     [SerializeField] float spawnTime;
+    [SerializeField] float radius = .5f;
     [SerializeField] float timer = Mathf.Infinity;
     [SerializeField] bool spawning = false;
 
@@ -34,7 +35,7 @@ public class WaveManager : MonoBehaviour
     void SpawnEnemy()
     {
         timer += Time.deltaTime;
-      //  spawning = true;
+        //  spawning = true;
         foreach (var enemy in enemies)
         {
             GameObject spawnPoint = spawnPoints[RandomSpawnPlacement()];
@@ -43,6 +44,15 @@ public class WaveManager : MonoBehaviour
                 var clone = Instantiate(enemy, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 timer = 0;
             }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        foreach(var s in spawnPoints)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireSphere(s.transform.position, radius);
         }
     }
 }

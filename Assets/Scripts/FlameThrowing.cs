@@ -21,7 +21,7 @@ public class FlameThrowing : MonoBehaviour
     }
     void Update()
     {
-        FlameAnim();
+       // FlameAnim();
 
         OverlapCapsule();
 
@@ -67,6 +67,8 @@ public class FlameThrowing : MonoBehaviour
         LayerMask layer = LayerMask.GetMask("Enemy");
         if (Input.GetKey(KeyCode.Q))
         {
+             anim.SetBool("Flaming", true);
+
             timer += Time.deltaTime;
 
             if (timer >= tickTime)
@@ -83,9 +85,14 @@ public class FlameThrowing : MonoBehaviour
                         enemyHealth.TakeDamage(flameDamage);
                     }
 
+                    timer = 0;
                 }
-                timer = 0;
             }
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            anim.SetBool("Flaming", false);
+            flameObj.SetActive(false);
         }
 
 
