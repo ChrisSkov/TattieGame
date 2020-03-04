@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthDisplay : MonoBehaviour
 {
     [SerializeField] Text hpText;
-   [SerializeField] Slider hpBar;
+    [SerializeField] Slider hpBar;
 
     float currentHealth;
     float maxHealth;
