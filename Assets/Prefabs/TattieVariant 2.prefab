@@ -2382,8 +2382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOffSet: 0.42
   groundCheckDistance: 0.87
-  speed: 20
-  jumpForce: 8.83
+  speed: 12
+  jumpForce: 5
   slamForce: 15
 --- !u!114 &6154114012776147677
 MonoBehaviour:
