@@ -37,6 +37,10 @@ public class RigidBodyMovement : MonoBehaviour
 
             hasSlammed = false;
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            if (moveDirection.magnitude > 1)
+            {
+                moveDirection = moveDirection.normalized;
+            }
             moveDirection *= speed;
             moveDirection = transform.TransformDirection(moveDirection);
             anim.SetFloat("forwardSpeed", Input.GetAxis("Vertical"));
