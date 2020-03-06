@@ -3,21 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[SelectionBase]
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100f;
-    [SerializeField] float currentHealth { get; set; }
+    [SerializeField] float currentHealth;
     bool isDead = false;
     void Start()
     {
         currentHealth = maxHealth;
-
-    }
-
-    void Update()
-    {
-
-
     }
 
     public float GetMaxHealth()

@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class ShootTeleport : MonoBehaviour
 {
+    [Header("Components")]
+    [Tooltip("Where are we shooting from")]
     [SerializeField] GameObject projectileSocket;
-    [SerializeField] float projectileSpeed = 10f;
-    //   [SerializeField] float tpOffset = 2f;
-    [SerializeField] float teleportTime = 1.8f;
-    [SerializeField] float timeBeforeTP = .5f;
-    [SerializeField] float cooldown = 2f;
+    [Tooltip("What are we shooting")]
     [SerializeField] Rigidbody projectilePrefab;
+    [Header("Look and feel")]
+    [Tooltip("How fast is the projectile")]
+    [SerializeField] float projectileSpeed = 10f;
+    [Tooltip("How long can we decide to teleport?")]
+    [SerializeField] float teleportTime = 1.8f;
+    [Tooltip("How long do we have to wait before we can teleport?")]
+    [SerializeField] float timeBeforeTP = .5f;
+    [Tooltip("When can we shoot again?")]
+    [SerializeField] float cooldown = 2f;
     Rigidbody rb;
     public float timer = Mathf.Infinity;
     public Rigidbody clone;

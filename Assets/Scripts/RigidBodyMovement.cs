@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class RigidBodyMovement : MonoBehaviour
 {
-    Rigidbody rb;
-    [SerializeField] float rayOffSet = 0.5f;
-    [SerializeField] float groundCheckDistance = 5f;
+    [Header("Player variables")]
     [SerializeField] float speed = 6.0f;
     [SerializeField] float jumpForce = 8.0f;
     [SerializeField] float slamForce = 8.0f;
+    [Header("Game feel")]
+    [SerializeField] float rayOffSet = 0.5f;
+    [Tooltip("How close to the ground do we have to be to jump")]
+    [SerializeField] float groundCheckDistance = 5f;
 
+    Rigidbody rb;
     private Vector3 moveDirection = Vector3.zero;
     Animator anim;
     bool hasSlammed = false;

@@ -4,21 +4,23 @@ using UnityEngine.AI;
 using UnityEngine;
 public class AIControl : MonoBehaviour
 {
-    [SerializeField] float suspicionTime = 3f;
+    [Header("Combat")]
+    [SerializeField] float damage = 10f;
+    [Range(0, 1)]
+    [SerializeField] float attackSpeed = 1f;
+    [SerializeField] float attackRange = 3f;
+    [SerializeField] float chaseRange = 10f;
+    [Header("Patrolling")]
     [SerializeField] PatrolPath patrolPath;
+    [Tooltip("How fast do we patrol compared to normal speed")]
+    [SerializeField] float patrolSpeedFraction = 0.2f;
     [SerializeField] float waypointDwellTime = 4f;
     [SerializeField] float waypointTolerance = 1f;
-    [SerializeField] float patrolSpeedFraction = 0.2f;
-    [SerializeField] float chaseRange = 10f;
-    [SerializeField] float damage = 10f;
-    [SerializeField] float attackSpeed = 1f;
-    [Range(0, 1)]
-    [SerializeField] float attackRange = 3f;
+    [SerializeField] float despawnTime = 3f;
     NavMeshAgent agent;
     Health playerHP;
     GameObject player;
     Vector3 guardPosition;
-    float timeSinceLastSawPlayer = Mathf.Infinity;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
     int currentWaypointIndex = 0;
     float attackTimer = Mathf.Infinity;
@@ -37,12 +39,21 @@ public class AIControl : MonoBehaviour
     {
         if (!health.IsDead())
         {
+            
             UpdateTimers();
             PatrolBehaviour();
             PlayerInChaseRange();
             ChaseBehavior();
             AttackBehavior();
             UpdateAnimator();
+        }
+        if(health.IsDead())
+        {
+            agent.isStopped = true;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.detectCollisions = false;
+            Destroy(gameObject, despawnTime);
+           
         }
 
     }

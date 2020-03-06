@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
+    [Header("Aim")]
+    [SerializeField] Transform cameraArm;
+    [SerializeField] Transform projectileSocket;
+    [SerializeField] Transform cam;
+    [SerializeField] Transform flame;
+    [Header("Adjustable Values")]
     [SerializeField] float rotationSpeed = 1;
     [SerializeField] float clampMin = -35f;
     [SerializeField] float clampMax = 60f;
-    [SerializeField] Transform cameraArm, projectileSocket, cam, flame;
 
 
     float mouseX, mouseY;

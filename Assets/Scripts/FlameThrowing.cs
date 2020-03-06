@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FlameThrowing : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField] Transform flameAim;
     [SerializeField] GameObject flameObj;
+    [Header("Damage")]
     [SerializeField] float flameDamage = 10f;
     [SerializeField] float tickTime = 0.2f;
     [SerializeField] float flameRadius = 3f;
     Animator anim;
-    [SerializeField] Transform flameAim;
+    [Header("Timer")]
     [SerializeField] float timer = 0;
 
     // Start is called before the first frame update

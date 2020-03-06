@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    [Header("Enemies and spawn locations")]
     [SerializeField] GameObject[] enemies;
     [SerializeField] GameObject[] spawnPoints;
+    [Header("Tuning")]
+    [Tooltip("How fast do enemies spawn?")]
     [SerializeField] float spawnTime;
-    [SerializeField] float radius = .5f;
+    [Tooltip("When does the next enemy spawn?")]
     [SerializeField] float timer = Mathf.Infinity;
+    [Header("For debugging")]
+    [Tooltip("Radius of gizmo")]
+    [SerializeField] float radius = .5f;
+    [Tooltip("Are we currently spawning enemies?")]
     [SerializeField] bool spawning = false;
 
     // Start is called before the first frame update
