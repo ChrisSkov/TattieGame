@@ -37,7 +37,7 @@ public class RigidBodyMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-
+            
             hasSlammed = false;
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             if (moveDirection.magnitude > 1)
