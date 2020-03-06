@@ -22,9 +22,12 @@ public class AIControl : MonoBehaviour
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
     int currentWaypointIndex = 0;
     float attackTimer = Mathf.Infinity;
-
+    Animator anim;
+    Health health;
     private void Start()
     {
+        health = GetComponent<Health>();
+        anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         playerHP = player.GetComponent<Health>();
         agent = GetComponent<NavMeshAgent>();
@@ -32,16 +35,20 @@ public class AIControl : MonoBehaviour
     }
     private void Update()
     {
-        UpdateTimers();
-        PatrolBehaviour();
-        PlayerInChaseRange();
-        ChaseBehavior();
-        AttackBehavior();
+        if (!health.IsDead())
+        {
+            UpdateTimers();
+            PatrolBehaviour();
+            PlayerInChaseRange();
+            ChaseBehavior();
+            AttackBehavior();
+            UpdateAnimator();
+        }
+
     }
     private void UpdateTimers()
     {
         attackTimer += Time.deltaTime;
-        // timeSinceLastSawPlayer += Time.deltaTime;
         timeSinceArrivedAtWaypoint += Time.deltaTime;
     }
 
@@ -62,7 +69,6 @@ public class AIControl : MonoBehaviour
         if (timeSinceArrivedAtWaypoint > waypointDwellTime)
         {
             agent.SetDestination(nextPosition);
-            //  mover.StartMoveAction(nextPosition, patrolSpeedFraction);
         }
     }
 
@@ -98,24 +104,45 @@ public class AIControl : MonoBehaviour
         {
             agent.SetDestination(player.transform.position);
         }
+        if (Vector3.Distance(transform.position, player.transform.position) <= agent.stoppingDistance)
+        {
+            agent.destination = transform.position;
+        }
     }
 
     void AttackBehavior()
     {
         if (PlayerInAttackRange() && attackTimer >= attackSpeed)
         {
+            TriggerAttack();
             playerHP.TakeDamage(damage);
             attackTimer = 0;
         }
+        else if (!PlayerInAttackRange())
+        {
+            StopAttack();
+        }
+    }
+    private void StopAttack()
+    {
+        GetComponent<Animator>().ResetTrigger("attack");
+        GetComponent<Animator>().SetTrigger("stopAttack");
+    }
+    private void TriggerAttack()
+    {
+        GetComponent<Animator>().ResetTrigger("stopAttack");
+        GetComponent<Animator>().SetTrigger("attack");
+    }
+    private void UpdateAnimator()
+    {
+        Vector3 velocity = agent.velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        anim.SetFloat("forwardSpeed", Mathf.Abs(speed));
+        print(anim.GetFloat("forwardSpeed"));
     }
 
-        // private void UpdateAnimator()
-        // {
-        //     Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
-        //     Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        //     float speed = localVelocity.z;
-        //     GetComponent<Animator>().SetFloat("forwardSpeed", speed);
-        // }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.black;

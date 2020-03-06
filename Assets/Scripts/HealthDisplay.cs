@@ -17,6 +17,7 @@ public class HealthDisplay : MonoBehaviour
     {
         health = GetComponent<Health>();
         maxHealth = health.GetMaxHealth();
+        hpBar.maxValue = maxHealth;
     }
 
     // Update is called once per frame

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100f;
-    [SerializeField] float currentHealth {get;set;}
+    [SerializeField] float currentHealth { get; set; }
+    bool isDead = false;
     void Start()
     {
         currentHealth = maxHealth;
@@ -16,16 +17,8 @@ public class Health : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            currentHealth -= 10f;
-        }
-        if(currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-    }
 
+    }
 
     public float GetMaxHealth()
     {
@@ -36,13 +29,31 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
 
-    
+    public bool IsDead()
+    {
+        return isDead;
+    }
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth - damage, 0);
+        if (currentHealth == 0)
+        {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        {
+            if (isDead) return;
+
+            isDead = true;
+            GetComponent<Animator>().SetTrigger("die");
+
+        }
     }
 
+    
     public void Heal(float healAmount)
     {
         currentHealth += healAmount;

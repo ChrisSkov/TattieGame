@@ -10,7 +10,7 @@ public class FlameThrowing : MonoBehaviour
     [SerializeField] float flameRadius = 3f;
     Animator anim;
     [SerializeField] Transform flameAim;
-    [SerializeField] float timer = Mathf.Infinity;
+    [SerializeField] float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class FlameThrowing : MonoBehaviour
     }
     void Update()
     {
-       // FlameAnim();
+        // FlameAnim();
 
         OverlapCapsule();
 
@@ -67,7 +67,7 @@ public class FlameThrowing : MonoBehaviour
         LayerMask layer = LayerMask.GetMask("Enemy");
         if (Input.GetKey(KeyCode.Q))
         {
-             anim.SetBool("Flaming", true);
+            anim.SetBool("Flaming", true);
 
             timer += Time.deltaTime;
 

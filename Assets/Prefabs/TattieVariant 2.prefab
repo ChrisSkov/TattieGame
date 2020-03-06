@@ -157,7 +157,7 @@ RectTransform:
   m_Children:
   - {fileID: 396528382}
   m_Father: {fileID: 1333174066656605414}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -479,6 +479,37 @@ MonoBehaviour:
   m_Text: 'Satan
 
 '
+--- !u!1 &2132871264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132871265}
+  m_Layer: 10
+  m_Name: FlameSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2132871265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132871264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.37, y: 1.65, z: 0.836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1524475968524511537}
+  m_Father: {fileID: 1333174066656605414}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333174066656569504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,10 +2247,10 @@ Transform:
   m_Children:
   - {fileID: 1333174066656605392}
   - {fileID: 1333174066656605394}
-  - {fileID: 1524475968524511537}
   - {fileID: 6985624103246088001}
   - {fileID: 6306309564286159346}
   - {fileID: 766124587}
+  - {fileID: 2132871265}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2382,8 +2413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOffSet: 0.42
   groundCheckDistance: 0.87
-  speed: 12
-  jumpForce: 5
+  speed: 10
+  jumpForce: 6.5
   slamForce: 15
 --- !u!114 &6154114012776147677
 MonoBehaviour:
@@ -2403,6 +2434,7 @@ MonoBehaviour:
   cameraArm: {fileID: 6985624103246088001}
   projectileSocket: {fileID: 6306309564286159346}
   cam: {fileID: 4188005740352907293}
+  flame: {fileID: 2132871265}
 --- !u!114 &7615656204033749055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,7 +2491,7 @@ MonoBehaviour:
   tickTime: 0.2
   flameRadius: 0.5
   flameAim: {fileID: 1041669450}
-  timer: Infinity
+  timer: 0
 --- !u!114 &7425179693072070449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2965,12 +2997,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524475968524152909}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.37, y: 1.65, z: 0.836}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1041669450}
-  m_Father: {fileID: 1333174066656605414}
-  m_RootOrder: 2
+  m_Father: {fileID: 2132871265}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!198 &1524475968543824983
 ParticleSystem:
@@ -7837,7 +7869,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1333174066656605414}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -12.47, y: 0, z: 0}
 --- !u!1 &8206207291387881319
 GameObject:
@@ -7868,5 +7900,5 @@ Transform:
   m_Children:
   - {fileID: 4188005740352907293}
   m_Father: {fileID: 1333174066656605414}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

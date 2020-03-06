@@ -7,7 +7,7 @@ public class CamController : MonoBehaviour
     [SerializeField] float rotationSpeed = 1;
     [SerializeField] float clampMin = -35f;
     [SerializeField] float clampMax = 60f;
-    [SerializeField] Transform cameraArm, projectileSocket, cam;
+    [SerializeField] Transform cameraArm, projectileSocket, cam, flame;
 
 
     float mouseX, mouseY;
@@ -31,6 +31,7 @@ public class CamController : MonoBehaviour
 
         cameraArm.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         projectileSocket.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+        flame.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         transform.rotation = Quaternion.Euler(0, mouseX, 0);
     }
 
