@@ -45,6 +45,46 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\ActivateTrigger.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\AlphaButtonClickMask.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\AutoMoveAndRotate.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\CameraRefocus.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\CurveControlledBob.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\DragRigidbody.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\DynamicShadowSettings.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\EventSystemChecker.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\FOVKick.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\FPSCounter.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\FollowTarget.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\LerpControlledBob.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\ObjectResetter.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\PlatformSpecificContent.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\SmoothFollow.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectActivator.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
+     <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
@@ -82,9 +122,29 @@
      <Compile Include="Assets\SelectBase.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\AssetPacks\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\AssetPacks\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
      <None Include="Assets\AssetPacks\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\AssetPacks\Animations\README - Usage Rights for these assets 1.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\ImageEffects\Readme.txt" />
+     <None Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\AssetPacks\Standard Assets\Fonts\OpenSans\License!.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
