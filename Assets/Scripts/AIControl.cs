@@ -13,7 +13,6 @@ public class AIControl : MonoBehaviour
     [Header("Patrolling")]
     [SerializeField] PatrolPath patrolPath;
     [Tooltip("How fast do we patrol compared to normal speed")]
-    [SerializeField] float patrolSpeedFraction = 0.2f;
     [SerializeField] float waypointDwellTime = 4f;
     [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float despawnTime = 3f;
@@ -37,24 +36,25 @@ public class AIControl : MonoBehaviour
     }
     private void Update()
     {
-        if (!health.IsDead())
-        {
-            
-            UpdateTimers();
-            PatrolBehaviour();
-            PlayerInChaseRange();
-            ChaseBehavior();
-            AttackBehavior();
-            UpdateAnimator();
-        }
-        if(health.IsDead())
+        // if (!health.IsDead())
+        // {}
+
+
+        if (health.IsDead())
         {
             agent.isStopped = true;
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.detectCollisions = false;
             Destroy(gameObject, despawnTime);
-           
+            return;
         }
+        UpdateTimers();
+        PatrolBehaviour();
+        PlayerInChaseRange();
+        ChaseBehavior();
+        AttackBehavior();
+        UpdateAnimator();
+
 
     }
     private void UpdateTimers()
@@ -150,7 +150,6 @@ public class AIControl : MonoBehaviour
         Vector3 localVelocity = transform.InverseTransformDirection(velocity);
         float speed = localVelocity.z;
         anim.SetFloat("forwardSpeed", Mathf.Abs(speed));
-        print(anim.GetFloat("forwardSpeed"));
     }
 
 

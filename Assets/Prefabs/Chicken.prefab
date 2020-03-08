@@ -966,12 +966,12 @@ GameObject:
   - component: {fileID: 1311290236254998}
   - component: {fileID: 1311290236254999}
   - component: {fileID: 1311290236255000}
-  - component: {fileID: 1311290236255003}
   - component: {fileID: 1311290236255002}
   - component: {fileID: 1311290236255001}
+  - component: {fileID: 8387724504617816652}
   m_Layer: 11
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1066,27 +1066,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.28, z: 0}
---- !u!114 &1311290236255003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386694694061418847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf0baaaf3357fc14e87ac7f7ac6a687d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  attackSpeed: 1
-  attackRange: 3
-  chaseRange: 10
-  patrolPath: {fileID: 0}
-  patrolSpeedFraction: 0.2
-  waypointDwellTime: 4
-  waypointTolerance: 1
-  despawnTime: 3
 --- !u!114 &1311290236255002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1094,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpText: {fileID: 230115613}
   hpBar: {fileID: 344005514}
+--- !u!114 &8387724504617816652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386694694061418847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2122342c0ac3d4d4a98986fa7e97912d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chickenLeg: {fileID: 4905755032509145015, guid: cdfb5542be8afff40bb4a1773de488ee,
+    type: 3}
+  yOffset: 1
+  timeBetweenSmokeAndLeg: 1
+  particle: {fileID: 7144403714533215575, guid: f65ba52f415aa974aba385ae1a9654a3,
+    type: 3}
+  chickenMesh: {fileID: 8387090972775776169}
 --- !u!1 &8386713842462857845
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,52 +18,20 @@ public class FlameThrowing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //flameAim = flameObj.transform.GetChild(0);
         anim = GetComponent<Animator>();
         flameObj.SetActive(false);
     }
     void Update()
     {
-        // FlameAnim();
-
         OverlapCapsule();
-
-    }
-
-
-
-
-    void FlameAnim()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            anim.SetBool("Flaming", true);
-            //OverlapCapsule();   
-            // OverlapCapsule();
-            // StartTick();
-        }
-        else if (Input.GetKeyUp(KeyCode.Q))
-        {
-            anim.SetBool("Flaming", false);
-            flameObj.SetActive(false);
-        }
     }
     void ActivateFlame()
     {
         if (anim.GetBool("Flaming"))
         {
             flameObj.SetActive(true);
-
-
         }
-
-        if (anim.GetBool("Flaming") == false)
-        {
-            flameObj.SetActive(false);
-        }
-
     }
-
 
     void OverlapCapsule()
     {
@@ -71,23 +39,16 @@ public class FlameThrowing : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             anim.SetBool("Flaming", true);
-
             timer += Time.deltaTime;
-
-            if (timer >= tickTime)
+            foreach (Collider c in Physics.OverlapCapsule(flameObj.transform.position, flameAim.transform.position, flameRadius, layer))
             {
-
-                foreach (Collider c in Physics.OverlapCapsule(flameObj.transform.position, flameAim.transform.position, flameRadius, layer))
+                print("hej");
+                GameObject enemy = c.gameObject;
+                if (c.gameObject != null && timer >= tickTime)
                 {
-                    print("hej");
-                    GameObject enemy = c.gameObject;
-                    if (c.gameObject != null)
-                    {
-                        Health enemyHealth = enemy.GetComponent<Health>();
-                        print("step 2");
-                        enemyHealth.TakeDamage(flameDamage);
-                    }
-
+                    Health enemyHealth = enemy.GetComponent<Health>();
+                    print("step 2");
+                    enemyHealth.TakeDamage(flameDamage);
                     timer = 0;
                 }
             }
@@ -101,9 +62,6 @@ public class FlameThrowing : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Callback to draw gizmos that are pickable and always drawn.
-    /// </summary>
     void OnDrawGizmos()
     {
         Gizmos.color = Color.black;

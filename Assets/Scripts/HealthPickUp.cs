@@ -21,7 +21,7 @@ public class HealthPickUp : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == health.gameObject)
         {

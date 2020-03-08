@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject[] spawnPoints;
     [Header("Tuning")]
     [Tooltip("How fast do enemies spawn?")]
-    [SerializeField] float spawnTime;
+    [SerializeField] float spawnTime = 5f;
     [Tooltip("When does the next enemy spawn?")]
     [SerializeField] float timer = Mathf.Infinity;
     [Header("For debugging")]

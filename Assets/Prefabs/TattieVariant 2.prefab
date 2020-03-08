@@ -2411,11 +2411,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ca36479d3865b44b1e4cd2731a4349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayOffSet: 0.42
-  groundCheckDistance: 0.87
   speed: 10
   jumpForce: 6.5
   slamForce: 15
+  rayOffSet: 0.42
+  groundCheckDistance: 0.87
 --- !u!114 &6154114012776147677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,13 +2428,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24689748a860344458b8545d43e5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
-  clampMin: -35
-  clampMax: 60
   cameraArm: {fileID: 6985624103246088001}
   projectileSocket: {fileID: 6306309564286159346}
   cam: {fileID: 4188005740352907293}
   flame: {fileID: 2132871265}
+  rotationSpeed: 1
+  clampMin: -35
+  clampMax: 60
 --- !u!114 &7615656204033749055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,6 +2474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
 --- !u!114 &2758630223402484051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2486,11 +2487,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fe13376beb1ed46ab30345c88a0186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flameAim: {fileID: 1041669450}
   flameObj: {fileID: 1524475968524152909}
   flameDamage: 10
   tickTime: 0.2
-  flameRadius: 0.5
-  flameAim: {fileID: 1041669450}
+  flameRadius: 1
   timer: 0
 --- !u!114 &7425179693072070449
 MonoBehaviour:
@@ -2981,7 +2982,6 @@ GameObject:
   - component: {fileID: 1524475968524511537}
   - component: {fileID: 1524475968543824983}
   - component: {fileID: 1524475968544281033}
-  - component: {fileID: 2113715599}
   m_Layer: 10
   m_Name: FlameThrower variant
   m_TagString: Untagged
@@ -7712,20 +7712,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!136 &2113715599
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524475968524152909}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 8.5
-  m_Direction: 0
-  m_Center: {x: 3.92, y: 0, z: 0.03}
 --- !u!1 &3321902371519062264
 GameObject:
   m_ObjectHideFlags: 0
