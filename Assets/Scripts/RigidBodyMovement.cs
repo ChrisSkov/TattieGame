@@ -32,12 +32,11 @@ public class RigidBodyMovement : MonoBehaviour
         Slam();
     }
 
-    private void Move()
+    public void Move()
     {
 
         if (IsGrounded())
         {
-            
             hasSlammed = false;
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             if (moveDirection.magnitude > 1)
@@ -52,8 +51,6 @@ public class RigidBodyMovement : MonoBehaviour
             {
                 moveDirection.y = jumpForce;
             }
-
-
         }
 
 
@@ -71,7 +68,7 @@ public class RigidBodyMovement : MonoBehaviour
         rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
     }
 
-    void Slam()
+    public void Slam()
     {
         if (!IsGrounded() && !hasSlammed && Input.GetButton("Jump") && Input.GetKey(KeyCode.LeftShift))
         {

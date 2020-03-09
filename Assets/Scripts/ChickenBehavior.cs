@@ -5,11 +5,13 @@ using UnityEngine.AI;
 
 public class ChickenBehavior : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField] GameObject particle;
     [SerializeField] GameObject chickenLeg;
+    [SerializeField] GameObject chickenMesh;
+    [Header("Variables")]
     [SerializeField] float yOffset = 1f;
     [SerializeField] float timeBetweenSmokeAndLeg = 1f;
-    [SerializeField] GameObject particle;
-    [SerializeField] GameObject chickenMesh;
     NavMeshAgent agent;
     Animator anim;
     Health health;
@@ -27,14 +29,18 @@ public class ChickenBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (legHasSpawned == false)
-        {
-            SpawnChickenLeg();
-        }
+        NormalDeath();
+
     }
 
-
-    void SpawnChickenLeg()
+    void NormalDeath()
+    {
+        if (health.IsDead())
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void SpawnChickenLeg()
     {
         if (health.IsDead())
         {

@@ -27,6 +27,11 @@ public class ShootTPv2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        ShootTP();
+    }
+
+    public void ShootTP()
+    {
         timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.F) && timer > cooldown)
         {
@@ -41,6 +46,5 @@ public class ShootTPv2 : MonoBehaviour
             rb.position = clone.transform.position;
             Destroy(clone);
         }
-
     }
 }

@@ -33,7 +33,7 @@ public class FlameThrowing : MonoBehaviour
         }
     }
 
-    void OverlapCapsule()
+    public void OverlapCapsule()
     {
         LayerMask layer = LayerMask.GetMask("Enemy");
         if (Input.GetKey(KeyCode.Q))
@@ -49,17 +49,24 @@ public class FlameThrowing : MonoBehaviour
                     Health enemyHealth = enemy.GetComponent<Health>();
                     print("step 2");
                     enemyHealth.TakeDamage(flameDamage);
+                    if (c.gameObject.CompareTag("chicken"))
+                    {
+                        c.gameObject.GetComponent<ChickenBehavior>().SpawnChickenLeg();
+                    }
                     timer = 0;
                 }
             }
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            anim.SetBool("Flaming", false);
-            flameObj.SetActive(false);
+            StopFlame();
         }
+    }
 
-
+    public void StopFlame()
+    {
+        anim.SetBool("Flaming", false);
+        flameObj.SetActive(false);
     }
 
     void OnDrawGizmos()

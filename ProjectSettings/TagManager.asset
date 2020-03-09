@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slider
   - Enemy
+  - chicken
   layers:
   - Default
   - TransparentFX

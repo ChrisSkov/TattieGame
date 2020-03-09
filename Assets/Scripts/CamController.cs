@@ -26,7 +26,7 @@ public class CamController : MonoBehaviour
     {
         CamControl();
     }
-    void CamControl()
+    public void CamControl()
     {
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
@@ -40,9 +40,5 @@ public class CamController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, mouseX, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }
