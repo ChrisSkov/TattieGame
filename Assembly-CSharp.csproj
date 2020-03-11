@@ -45,6 +45,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AICombat.cs" />
+     <Compile Include="Assets\AIMover.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -85,8 +87,6 @@
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <Compile Include="Assets\DestroyParticle.cs" />
-     <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
@@ -103,25 +103,20 @@
      <Compile Include="Assets\Scripts\AimControl.cs" />
      <Compile Include="Assets\Scripts\AudioControl.cs" />
      <Compile Include="Assets\Scripts\CamController.cs" />
-     <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\ChickenBehavior.cs" />
      <Compile Include="Assets\Scripts\DeathPlane.cs" />
-     <Compile Include="Assets\Scripts\FlameNoAnim.cs" />
+     <Compile Include="Assets\Scripts\DestroyParticle.cs" />
      <Compile Include="Assets\Scripts\FlameThrowing.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\HealthPickUp.cs" />
-     <Compile Include="Assets\Scripts\MovePhysics.cs" />
-     <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\PatrolPath.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RigidBodyMovement.cs" />
      <Compile Include="Assets\Scripts\RotateText.cs" />
      <Compile Include="Assets\Scripts\SelectBase.cs" />
      <Compile Include="Assets\Scripts\ShootTPv2.cs" />
-     <Compile Include="Assets\Scripts\ShootTeleport.cs" />
-     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-     <Compile Include="Assets\Scripts\TestMovement.cs" />
      <Compile Include="Assets\Scripts\WaveManager.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\AssetPacks\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
