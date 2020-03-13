@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     ShootTPv2 shootTP;
     CamController camControl;
     AudioControl audioControl;
+    Fight fight;
     // Start is called before the first frame update
     void Start()
     {
+        fight = GetComponent<Fight>();
         health = GetComponent<Health>();
         rbMove = GetComponent<RigidBodyMovement>();
         flame = GetComponent<FlameThrowing>();
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (health.IsDead())
         {
+            fight.enabled = false;
             rbMove.enabled = false;
             flame.StopFlame();
             flame.enabled = false;
