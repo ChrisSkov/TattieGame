@@ -9,16 +9,20 @@ public class ChickenBehavior : MonoBehaviour
     [SerializeField] GameObject particle;
     [SerializeField] GameObject chickenLeg;
     [SerializeField] GameObject chickenMesh;
+    [SerializeField] Transform[] moveDirections = new Transform[4];
     [Header("Variables")]
     [SerializeField] float yOffset = 1f;
     [SerializeField] float timeBetweenSmokeAndLeg = 1f;
+    [SerializeField] float directionChangeTime;
+    [SerializeField] float directionChangeTimeMax = 1f;
+    [SerializeField] float directionChangeTimeMin = 5f;
     NavMeshAgent agent;
     Animator anim;
     Health health;
     // Start is called before the first frame update
     bool legHasSpawned = false;
     bool smokeHasSpawned = false;
-    float timer;
+    float timer = Mathf.Infinity;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,7 +34,31 @@ public class ChickenBehavior : MonoBehaviour
     void Update()
     {
         NormalDeath();
+        //  ChickenAnim();
+        ChangeDirection();
+        UpdateAnimator();
+        timer += Time.deltaTime;
 
+    }
+
+
+    private void ChangeDirection()
+    {
+        if (timer > directionChangeTime)
+        {
+            int destination = Random.Range(0, 3);
+            agent.SetDestination(moveDirections[destination].transform.position);
+            transform.LookAt(agent.destination);
+            timer = 0;
+            directionChangeTime = Random.Range(directionChangeTimeMin, directionChangeTimeMax);
+        }
+    }
+    private void UpdateAnimator()
+    {
+        Vector3 velocity = agent.velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        anim.SetFloat("forwardSpeed", Mathf.Abs(speed));
     }
 
     void NormalDeath()
