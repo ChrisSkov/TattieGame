@@ -12,6 +12,7 @@ public class AICombat : MonoBehaviour
     [SerializeField] float timeBetweenAttacks = 1f;
     [SerializeField] float attackRange = 3f;
     [SerializeField] float despawnTime = 3f;
+    [SerializeField] float pointValue = 100f;
 
     float timeSinceLastAttack = Mathf.Infinity;
 
@@ -20,15 +21,17 @@ public class AICombat : MonoBehaviour
     Animator anim;
     Health health;
     Health playerHP;
-
+    bool scoreIsUpdated = false;
+    GameObject player;
     [SerializeField] Health target;
 
     AIMover mover;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        playerHP = player.GetComponent<Health>();
         mover = GetComponent<AIMover>();
-        playerHP = GameObject.FindWithTag("Player").GetComponent<Health>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         health = GetComponent<Health>();
@@ -63,11 +66,13 @@ public class AICombat : MonoBehaviour
 
     void DeathBehavior()
     {
-        if (health.IsDead())
+        if (health.IsDead() && !scoreIsUpdated)
         {
             agent.isStopped = true;
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.detectCollisions = false;
+            player.gameObject.GetComponent<Score>().score += pointValue;
+            scoreIsUpdated = true;
             Destroy(gameObject, despawnTime);
             return;
         }
@@ -122,7 +127,6 @@ public class AICombat : MonoBehaviour
 
             }
         }
-        print(closest.name);
         return closest;
     }
     private void StopAttack()

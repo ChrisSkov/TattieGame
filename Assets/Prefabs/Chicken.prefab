@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 335750910}
   - component: {fileID: 335750912}
   - component: {fileID: 335750911}
-  - component: {fileID: 335750913}
   m_Layer: 11
   m_Name: Name
   m_TagString: Untagged
@@ -184,7 +183,7 @@ RectTransform:
   m_LocalScale: {x: 0.014015273, y: 0.0288134, z: 0}
   m_Children: []
   m_Father: {fileID: 1155481073}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -230,30 +229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Satan
-
-'
---- !u!114 &335750913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335750909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b089a0d1bfe46cb409a235ca7b3e110e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chickenNames:
-  - Kvisten
-  - Paul
-  - George
-  - Steve
-  - Mert
-  - "Warl\xF8kke"
-  - Lars
-  - ChrilleBob
+  m_Text: Paul
 --- !u!1 &344005512
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +262,7 @@ RectTransform:
   - {fileID: 1230419438}
   - {fileID: 230115612}
   m_Father: {fileID: 1155481073}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -433,8 +409,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
-  - {fileID: 344005513}
   - {fileID: 335750910}
+  - {fileID: 344005513}
   m_Father: {fileID: 289821139}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
