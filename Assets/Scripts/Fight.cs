@@ -33,10 +33,14 @@ public class Fight : MonoBehaviour
             TriggerAttack();
             timeSinceLastAttack = 0;
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Mouse0) )//|| timeSinceLastAttack < timeBetweenAttacks )
         {
             StopAttack();
         }
+        // else
+        // {
+        //     StopAttack();
+        // }
     }
     void Hit()
     {

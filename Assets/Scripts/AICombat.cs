@@ -33,7 +33,7 @@ public class AICombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody> ();
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
         playerHP = player.GetComponent<Health>();
         mover = GetComponent<AIMover>();
@@ -53,20 +53,21 @@ public class AICombat : MonoBehaviour
 
     private void TargetBehavior()
     {
+        if (target == null)
+        {
+            target = FindTarget().GetComponent<Health>();
+        }
         if (mover.PlayerInChaseRange())
         {
             target = playerHP;
         }
-        else
-        {
-            target = FindTarget().GetComponent<Health>();
-        }
-        mover.MoveToTarget(target);
         if (TargetInAttackRange())
         {
             AttackBehavior();
         }
-        if (target == null) return;
+        mover.MoveToTarget(target);
+
+
     }
 
     void Dead()
@@ -101,13 +102,14 @@ public class AICombat : MonoBehaviour
     }
     bool TargetInAttackRange()
     {
-        return Vector3.Distance(transform.position, target.transform.position) < attackRange;
+        return Vector3.Distance(transform.position, target.transform.position) <= attackRange;
 
     }
 
     private void AttackBehavior()
     {
         transform.LookAt(target.transform);
+
         if (timeSinceLastAttack > timeBetweenAttacks && TargetInAttackRange())
         {
             // This will trigger the Hit() event.

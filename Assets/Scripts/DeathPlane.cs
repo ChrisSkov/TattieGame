@@ -8,11 +8,12 @@ public class DeathPlane : MonoBehaviour
     //Vector3 playerStartPos;
 
     Vector3 respawnPos;
+    public bool respawn = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-       // playerStartPos = player.transform.position;
+        // playerStartPos = player.transform.position;
         respawnPos = transform.GetChild(0).position;
     }
 
@@ -24,9 +25,13 @@ public class DeathPlane : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && respawn)
         {
             player.transform.position = respawnPos;
+        }
+        else
+        {
+            Destroy(other.gameObject);
         }
     }
 }

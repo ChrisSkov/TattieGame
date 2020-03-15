@@ -31,7 +31,7 @@ public class AIMover : MonoBehaviour
 
     public bool PlayerInChaseRange()
     {
-        return Vector3.Distance(transform.position, playerHP.transform.position) < chaseRange;
+        return Vector3.Distance(transform.position, playerHP.transform.position) <= chaseRange;
     }
 
     public void CancelMove()
