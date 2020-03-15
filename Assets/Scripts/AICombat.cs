@@ -11,8 +11,10 @@ public class AICombat : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] float timeBetweenAttacks = 1f;
     [SerializeField] float attackRange = 3f;
+    [Header("Death")]
     [SerializeField] float despawnTime = 3f;
     [SerializeField] float pointValue = 100f;
+    [SerializeField] float knockBackForce = 2f;
 
     float timeSinceLastAttack = Mathf.Infinity;
 
@@ -26,9 +28,12 @@ public class AICombat : MonoBehaviour
     [SerializeField] Health target;
 
     AIMover mover;
+
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody> ();
         player = GameObject.FindWithTag("Player");
         playerHP = player.GetComponent<Health>();
         mover = GetComponent<AIMover>();
@@ -64,6 +69,11 @@ public class AICombat : MonoBehaviour
         if (target == null) return;
     }
 
+    void Dead()
+    {
+        print("knocked over");
+        rb.AddRelativeForce(-Vector3.forward * knockBackForce, ForceMode.Impulse);
+    }
     void DeathBehavior()
     {
         if (health.IsDead() && !scoreIsUpdated)

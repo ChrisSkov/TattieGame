@@ -33,7 +33,7 @@ public class Fight : MonoBehaviour
             TriggerAttack();
             timeSinceLastAttack = 0;
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             StopAttack();
         }
@@ -45,7 +45,7 @@ public class Fight : MonoBehaviour
         {
             if (c.gameObject != null && c.gameObject.tag == ("Enemy"))
             {
-                Vector3 offSet = new Vector3(0,offset,0);
+                Vector3 offSet = new Vector3(0, offset, 0);
                 var bloodClone = Instantiate(bloodEffect, c.ClosestPoint(swordAim.transform.position + offSet), swordAim.transform.rotation);
                 c.gameObject.GetComponent<Health>().TakeDamage(damage);
             }
@@ -59,13 +59,16 @@ public class Fight : MonoBehaviour
     }
     private void StopAttack()
     {
-        GetComponent<Animator>().ResetTrigger("attack");
-        GetComponent<Animator>().SetTrigger("stopAttack");
+        // GetComponent<Animator>().ResetTrigger("attack");
+        // GetComponent<Animator>().SetTrigger("stopAttack");
+        GetComponent<Animator>().SetBool("attacking", false);
+
     }
     private void TriggerAttack()
     {
         GetComponent<FlameThrowing>().StopFlame();
-        GetComponent<Animator>().ResetTrigger("stopAttack");
-        GetComponent<Animator>().SetTrigger("attack");
+        // GetComponent<Animator>().ResetTrigger("stopAttack");
+        // GetComponent<Animator>().SetTrigger("attack");
+        GetComponent<Animator>().SetBool("attacking", true);
     }
 }

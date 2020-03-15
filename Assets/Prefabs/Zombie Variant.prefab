@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b8bfc1b6b524e4cba301092d80438e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 4
   timeBetweenAttacks: 1
-  attackRange: 3
+  attackRange: 3.89
   despawnTime: 3
+  pointValue: 100
+  knockBackForce: 40
   target: {fileID: 0}
 --- !u!114 &236985534
 MonoBehaviour:
@@ -40,12 +42,12 @@ PrefabInstance:
     - target: {fileID: 1533334793433537140, guid: 1e452ec5e2c5d6141bccf676b18d728b,
         type: 3}
       propertyPath: m_Name
-      value: Zombie Variant
+      value: Zombie Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2529938898084997223, guid: 1e452ec5e2c5d6141bccf676b18d728b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.55
+      value: 91.34
       objectReference: {fileID: 0}
     - target: {fileID: 2529938898084997223, guid: 1e452ec5e2c5d6141bccf676b18d728b,
         type: 3}
@@ -96,6 +98,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106050353235751949, guid: 1e452ec5e2c5d6141bccf676b18d728b,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106050353235751953, guid: 1e452ec5e2c5d6141bccf676b18d728b,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3106050353235751952, guid: 1e452ec5e2c5d6141bccf676b18d728b, type: 3}

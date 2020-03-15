@@ -97,7 +97,6 @@
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
-     <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
      <Compile Include="Assets\Scripts\AIControl.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
@@ -118,6 +117,7 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RigidBodyMovement.cs" />
      <Compile Include="Assets\Scripts\RotateText.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\SelectBase.cs" />
      <Compile Include="Assets\Scripts\ShootTPv2.cs" />
      <Compile Include="Assets\Scripts\WaveManager.cs" />

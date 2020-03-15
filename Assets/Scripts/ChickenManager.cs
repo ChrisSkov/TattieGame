@@ -19,12 +19,12 @@ public class ChickenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        chickens = GameObject.FindGameObjectsWithTag("chicken");
         chickenCounter.text = string.Format("Chickens: {0}", chickens.Length);
 
     }
     void NameTheChickens()
     {
+        chickens = GameObject.FindGameObjectsWithTag("chicken");
         foreach (GameObject chicken in chickens)
         {
             chickenName = chicken.gameObject.GetComponentInChildren<Text>();
