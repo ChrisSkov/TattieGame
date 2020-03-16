@@ -7,9 +7,12 @@ public class Fight : MonoBehaviour
 
     [SerializeField] float timeBetweenAttacks = 1f;
     [SerializeField] float damage = 1f;
+    [SerializeField] float stabDamage = 1f;
     [SerializeField] Transform swordAim;
+    [SerializeField] Transform stabAim;
     [SerializeField] float offset = 1f;
     [SerializeField] float radius = 1f;
+    [SerializeField] float stabRange = 3f;
     [SerializeField] GameObject bloodEffect;
     public float timeSinceLastAttack = Mathf.Infinity;
 
@@ -23,6 +26,8 @@ public class Fight : MonoBehaviour
     void Update()
     {
         AttackBehavior();
+        Debug.DrawRay(stabAim.transform.position, transform.TransformDirection(Vector3.forward) * stabRange, Color.yellow);
+
     }
     private void AttackBehavior()
     {
@@ -45,6 +50,14 @@ public class Fight : MonoBehaviour
         {
             StopAttackHeavy();
         }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            TriggerStab();
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            StopStab();
+        }
 
     }
 
@@ -62,6 +75,20 @@ public class Fight : MonoBehaviour
             }
         }
 
+    }
+
+    void Stab()
+    {
+        LayerMask layer = LayerMask.GetMask("Enemy");
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(stabAim.transform.position, transform.TransformDirection(Vector3.forward), out hit, stabRange, layer))
+        {
+            Vector3 offSet = new Vector3(0, offset, 0);
+
+            hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);
+            var bloodClone = Instantiate(bloodEffect, hit.point, hit.rigidbody.gameObject.transform.rotation);
+        }
     }
     private void OnDrawGizmos()
     {
@@ -87,5 +114,15 @@ public class Fight : MonoBehaviour
     {
         GetComponent<Animator>().ResetTrigger("stopAttack");
         GetComponent<Animator>().SetTrigger("attack");
+    }
+    private void StopStab()
+    {
+        GetComponent<Animator>().ResetTrigger("stab");
+        GetComponent<Animator>().SetTrigger("stopStab");
+    }
+    private void TriggerStab()
+    {
+        GetComponent<Animator>().ResetTrigger("stopStab");
+        GetComponent<Animator>().SetTrigger("stab");
     }
 }
