@@ -37,8 +37,18 @@ public class Fight : MonoBehaviour
         {
             StopAttack();
         }
-  
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            TriggerAttackHeavy();
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            StopAttackHeavy();
+        }
+
     }
+
+
     void Hit()
     {
         LayerMask layer = LayerMask.GetMask("Enemy");
@@ -66,5 +76,16 @@ public class Fight : MonoBehaviour
     {
         GetComponent<FlameThrowing>().StopFlame();
         GetComponent<Animator>().SetBool("attacking", true);
+    }
+
+    private void StopAttackHeavy()
+    {
+        GetComponent<Animator>().ResetTrigger("attack");
+        GetComponent<Animator>().SetTrigger("stopAttack");
+    }
+    private void TriggerAttackHeavy()
+    {
+        GetComponent<Animator>().ResetTrigger("stopAttack");
+        GetComponent<Animator>().SetTrigger("attack");
     }
 }
