@@ -51,6 +51,8 @@ public class RigidBodyMovement : MonoBehaviour
             {
                 moveDirection.y = jumpForce;
             }
+
+
         }
 
 

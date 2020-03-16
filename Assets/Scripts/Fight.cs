@@ -33,14 +33,11 @@ public class Fight : MonoBehaviour
             TriggerAttack();
             timeSinceLastAttack = 0;
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0) )//|| timeSinceLastAttack < timeBetweenAttacks )
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             StopAttack();
         }
-        // else
-        // {
-        //     StopAttack();
-        // }
+  
     }
     void Hit()
     {
@@ -63,16 +60,11 @@ public class Fight : MonoBehaviour
     }
     private void StopAttack()
     {
-        // GetComponent<Animator>().ResetTrigger("attack");
-        // GetComponent<Animator>().SetTrigger("stopAttack");
         GetComponent<Animator>().SetBool("attacking", false);
-
     }
     private void TriggerAttack()
     {
         GetComponent<FlameThrowing>().StopFlame();
-        // GetComponent<Animator>().ResetTrigger("stopAttack");
-        // GetComponent<Animator>().SetTrigger("attack");
         GetComponent<Animator>().SetBool("attacking", true);
     }
 }
