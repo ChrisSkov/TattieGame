@@ -15,11 +15,11 @@ public class Fight : MonoBehaviour
     [SerializeField] float stabRange = 3f;
     [SerializeField] GameObject bloodEffect;
     public float timeSinceLastAttack = Mathf.Infinity;
-
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -52,6 +52,7 @@ public class Fight : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Z))
         {
+          
             TriggerStab();
         }
         else if (Input.GetKeyUp(KeyCode.Z))
@@ -122,6 +123,7 @@ public class Fight : MonoBehaviour
     }
     private void TriggerStab()
     {
+        
         GetComponent<Animator>().ResetTrigger("stopStab");
         GetComponent<Animator>().SetTrigger("stab");
     }

@@ -21,10 +21,12 @@ public class ChickenManager : MonoBehaviour
     {
         chickenCounter.text = string.Format("Chickens: {0}", chickens.Length);
 
+        chickens = GameObject.FindGameObjectsWithTag("chicken");
     }
     void NameTheChickens()
     {
-        chickens = GameObject.FindGameObjectsWithTag("chicken");
+                chickens = GameObject.FindGameObjectsWithTag("chicken");
+
         foreach (GameObject chicken in chickens)
         {
             chickenName = chicken.gameObject.GetComponentInChildren<Text>();

@@ -1197,6 +1197,11 @@ PrefabInstance:
       propertyPath: stabDamage
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1333174066647047012, guid: 5c8c8b568d46a4345abc648a353d5d2a,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1333174066656569606, guid: 5c8c8b568d46a4345abc648a353d5d2a,
         type: 3}
       propertyPath: m_Name

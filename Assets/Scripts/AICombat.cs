@@ -53,7 +53,7 @@ public class AICombat : MonoBehaviour
 
     private void TargetBehavior()
     {
-        if (target == null)
+        if (target == null || !mover.PlayerInChaseRange())
         {
             target = FindTarget().GetComponent<Health>();
         }
