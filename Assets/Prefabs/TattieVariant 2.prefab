@@ -2506,7 +2506,6 @@ GameObject:
   - component: {fileID: 7615656204033749041}
   - component: {fileID: 6585329007707574061}
   - component: {fileID: 2758630223402484051}
-  - component: {fileID: 7425179693072070449}
   - component: {fileID: 451998763}
   - component: {fileID: 1172960878}
   - component: {fileID: 1327672660}
@@ -2778,23 +2777,6 @@ MonoBehaviour:
   flameRadius: 2
   attackToFlameThreshold: 0.8
   timer: 0
---- !u!114 &7425179693072070449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333174066656569606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec180ad1d54c98c49bad80c8f3cc32ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSocket: {fileID: 6678867001682815065}
-  originalBullet: {fileID: 2855644895353186192, guid: 64807915731925d4092c69f44ba420ac,
-    type: 3}
-  projectileSpeed: 60
-  cooldown: 2
 --- !u!114 &451998763
 MonoBehaviour:
   m_ObjectHideFlags: 0
