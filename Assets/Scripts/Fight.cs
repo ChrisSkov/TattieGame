@@ -52,12 +52,28 @@ public class Fight : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Z))
         {
-          
+
             TriggerStab();
         }
         else if (Input.GetKeyUp(KeyCode.Z))
         {
             StopStab();
+        }
+        if (Input.GetKey(KeyCode.Mouse0) && Input.GetKey(KeyCode.LeftShift))
+        {
+            TriggerRunJumpAttack();
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))// && Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            StopRunJumpAttack();
+        }
+        if(Input.GetKey(KeyCode.E))
+        {
+            TriggerDance();
+        }
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            StopDance();
         }
 
     }
@@ -96,25 +112,34 @@ public class Fight : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(swordAim.position, radius);
     }
+    private void StopDance()
+    {
+        GetComponent<Animator>().SetBool("dance", false);
+    }
+    private void TriggerDance()
+    {
+        GetComponent<FlameThrowing>().StopFlame();
+        GetComponent<Animator>().SetBool("dance", true);
+    }
     private void StopAttack()
     {
-        GetComponent<Animator>().SetBool("attacking", false);
+        GetComponent<Animator>().SetBool("lightAttack", false);
     }
     private void TriggerAttack()
     {
         GetComponent<FlameThrowing>().StopFlame();
-        GetComponent<Animator>().SetBool("attacking", true);
+        GetComponent<Animator>().SetBool("lightAttack", true);
     }
 
     private void StopAttackHeavy()
     {
-        GetComponent<Animator>().ResetTrigger("attack");
-        GetComponent<Animator>().SetTrigger("stopAttack");
+        GetComponent<Animator>().ResetTrigger("heavyAttack");
+        GetComponent<Animator>().SetTrigger("stopHeavyAttack");
     }
     private void TriggerAttackHeavy()
     {
-        GetComponent<Animator>().ResetTrigger("stopAttack");
-        GetComponent<Animator>().SetTrigger("attack");
+        GetComponent<Animator>().ResetTrigger("stopHeavyAttack");
+        GetComponent<Animator>().SetTrigger("heavyAttack");
     }
     private void StopStab()
     {
@@ -123,8 +148,19 @@ public class Fight : MonoBehaviour
     }
     private void TriggerStab()
     {
-        
+
         GetComponent<Animator>().ResetTrigger("stopStab");
         GetComponent<Animator>().SetTrigger("stab");
+    }
+    private void StopRunJumpAttack()
+    {
+        GetComponent<Animator>().ResetTrigger("runJumpAttack");
+        GetComponent<Animator>().SetTrigger("stopRunJumpAttack");
+    }
+    private void TriggerRunJumpAttack()
+    {
+
+        GetComponent<Animator>().ResetTrigger("stopRunJumpAttack");
+        GetComponent<Animator>().SetTrigger("runJumpAttack");
     }
 }

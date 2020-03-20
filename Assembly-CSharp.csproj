@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetPacks\AIControl.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -98,7 +99,6 @@
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
-     <Compile Include="Assets\Scripts\AIControl.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />
      <Compile Include="Assets\Scripts\AudioControl.cs" />

@@ -50,20 +50,22 @@ public class RigidBodyMovement : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
+                anim.SetBool("isRunning", false);
             }
 
-
-            if (moveDirection.z > 0 || moveDirection.x > 0)
+            if (Mathf.Abs(moveDirection.z) > 0 || Mathf.Abs(moveDirection.x) > 0)
             {
                 anim.SetBool("isRunning", true);
             }
             else
             {
-
                 anim.SetBool("isRunning", false);
             }
         }
-
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
         rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
     }
 
