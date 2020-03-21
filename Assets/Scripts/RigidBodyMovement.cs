@@ -37,6 +37,7 @@ public class RigidBodyMovement : MonoBehaviour
 
         if (IsGrounded())
         {
+
             hasSlammed = false;
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             if (moveDirection.magnitude > 1)
@@ -49,9 +50,10 @@ public class RigidBodyMovement : MonoBehaviour
             anim.SetFloat("horizontalSpeed", Input.GetAxis("Horizontal"));
             if (Input.GetButton("Jump"))
             {
-                moveDirection.y = jumpForce;
                 anim.SetBool("isRunning", false);
+                moveDirection.y = jumpForce;
             }
+
 
             if (Mathf.Abs(moveDirection.z) > 0 || Mathf.Abs(moveDirection.x) > 0)
             {
