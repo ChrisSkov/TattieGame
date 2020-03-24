@@ -7,6 +7,8 @@ public class RigidBodyMovement : MonoBehaviour
     [Header("Player variables")]
     [SerializeField] float speed = 6.0f;
     [SerializeField] float jumpForce = 8.0f;
+    public bool ground = true;
+
     [SerializeField] float slamForce = 8.0f;
     [Header("Game feel")]
     [SerializeField] float rayOffSet = 0.5f;
@@ -29,7 +31,19 @@ public class RigidBodyMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+   
+        
         Slam();
+        if (IsGrounded())
+        {
+            ground = true;
+            //anim.SetBool("isJumping", false);
+
+        }
+        else
+        {
+            ground = false;
+        }
     }
 
     public void Move()
@@ -37,23 +51,16 @@ public class RigidBodyMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-
+            anim.SetBool("isJumping", false);
             hasSlammed = false;
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            if (moveDirection.magnitude > 1)
-            {
-                moveDirection = moveDirection.normalized;
-            }
-            moveDirection *= speed;
-            moveDirection = transform.TransformDirection(moveDirection);
-            anim.SetFloat("forwardSpeed", Input.GetAxis("Vertical"));
-            anim.SetFloat("horizontalSpeed", Input.GetAxis("Horizontal"));
+            MoveDirection();
             if (Input.GetButton("Jump"))
             {
+                anim.SetBool("isJumping", true);
                 anim.SetBool("isRunning", false);
-                moveDirection.y = jumpForce;
-            }
+                //moveDirection.y = jumpForce;
 
+            }
 
             if (Mathf.Abs(moveDirection.z) > 0 || Mathf.Abs(moveDirection.x) > 0)
             {
@@ -69,6 +76,26 @@ public class RigidBodyMovement : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
         rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
+    }
+
+    private void MoveDirection()
+    {
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        if (moveDirection.magnitude > 1)
+        {
+            moveDirection = moveDirection.normalized;
+        }
+        moveDirection *= speed;
+        moveDirection = transform.TransformDirection(moveDirection);
+        anim.SetFloat("forwardSpeed", Input.GetAxis("Vertical"));
+        anim.SetFloat("horizontalSpeed", Input.GetAxis("Horizontal"));
+    }
+
+    void Jump()
+    {
+        MoveDirection();
+        moveDirection.y = jumpForce;
+        rb.MovePosition(rb.position + moveDirection * Time.fixedDeltaTime);
     }
 
     public void Slam()
