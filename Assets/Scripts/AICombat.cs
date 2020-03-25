@@ -11,21 +11,23 @@ public class AICombat : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] float timeBetweenAttacks = 1f;
     [SerializeField] float attackRange = 3f;
+    [SerializeField] AudioClip[] attackSounds;
     [Header("Death")]
     [SerializeField] float despawnTime = 3f;
     [SerializeField] float pointValue = 100f;
     [SerializeField] float knockBackForce = 2f;
+    [SerializeField] Health target;
 
-    float timeSinceLastAttack = Mathf.Infinity;
-
-    NavMeshAgent agent;
     float attackTimer = Mathf.Infinity;
+    float timeSinceLastAttack = Mathf.Infinity;
+    int randomSoundClip;
+    AudioSource source;
+    GameObject player;
+    Health playerHP;
+    NavMeshAgent agent;
     Animator anim;
     Health health;
-    Health playerHP;
     bool scoreIsUpdated = false;
-    GameObject player;
-    [SerializeField] Health target;
 
     AIMover mover;
 
@@ -33,6 +35,7 @@ public class AICombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
         playerHP = player.GetComponent<Health>();
@@ -97,6 +100,8 @@ public class AICombat : MonoBehaviour
         {
             return;
         }
+
+        source.PlayOneShot(attackSounds[0]);
         target.TakeDamage(damage);
 
     }
@@ -114,7 +119,10 @@ public class AICombat : MonoBehaviour
         {
             // This will trigger the Hit() event.
             TriggerAttack();
+            randomSoundClip = Random.Range(0, attackSounds.Length - 1);
+
             timeSinceLastAttack = 0;
+
         }
         else
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fight : MonoBehaviour
 {
 
-    [SerializeField]  float damage = 1f;
+    [SerializeField] float damage = 1f;
     [SerializeField] float stabRange = 3f;
     [SerializeField] float stabDamage = 1f;
     [SerializeField] Transform swordAim;
@@ -13,8 +13,14 @@ public class Fight : MonoBehaviour
     [SerializeField] float offset = 1f;
     [SerializeField] float radius = 1f;
     [SerializeField] GameObject bloodEffect;
+    [SerializeField] AudioClip[] attackSounds;
+    AudioSource source;
+    int randomSoundClip;
     public float timeSinceLastAttack = Mathf.Infinity;
-
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,11 +38,18 @@ public class Fight : MonoBehaviour
     //Animation event for Light Attack
     void Hit()
     {
+        bool hasPlayed = false;
         LayerMask layer = LayerMask.GetMask("Enemy");
         foreach (Collider c in Physics.OverlapSphere(swordAim.position, radius, layer))
         {
             if (c.gameObject != null && c.gameObject.tag == ("Enemy"))
             {
+                if (!hasPlayed)
+                {
+                    randomSoundClip = Random.Range(0, attackSounds.Length);
+                    source.PlayOneShot(attackSounds[randomSoundClip]);
+                    hasPlayed = true;
+                }
                 Vector3 offSet = new Vector3(0, offset, 0);
                 var bloodClone = Instantiate(bloodEffect, c.ClosestPoint(swordAim.transform.position + offSet), swordAim.transform.rotation);
                 c.gameObject.GetComponent<Health>().TakeDamage(GetDamage());
@@ -53,6 +66,8 @@ public class Fight : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(stabAim.transform.position, transform.TransformDirection(Vector3.forward), out hit, stabRange, layer))
         {
+            randomSoundClip = Random.Range(0, attackSounds.Length);
+            source.PlayOneShot(attackSounds[randomSoundClip]);
             Vector3 offSet = new Vector3(0, offset, 0);
 
             hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);

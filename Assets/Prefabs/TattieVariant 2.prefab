@@ -2596,9 +2596,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3b938a567fc0d34eb48cac68fb29b84, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.548
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2695,7 +2695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 6
+  jumpForce: 50
+  ground: 1
   slamForce: 15
   rayOffSet: 0.42
   groundCheckDistance: 0.87
@@ -2730,6 +2731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4fe324b37389b4391e708a08037519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 4295c0d7de0f8664db1b56adb2b48dbd, type: 3}
 --- !u!114 &7615656204033749041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,6 +2812,12 @@ MonoBehaviour:
   radius: 2
   bloodEffect: {fileID: 5375650369171883893, guid: f6ce9b28508538d4290ba738e57aa49e,
     type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 6cdf2b6afcdf03c4fb959f056819ba48, type: 3}
+  - {fileID: 8300000, guid: 594c4d362d2ee664e91397fd725b3b3f, type: 3}
+  - {fileID: 8300000, guid: b0c1abd0649fdfd428d028574a0805fe, type: 3}
+  - {fileID: 8300000, guid: 94c93377631b5c14e959b951b435b46a, type: 3}
+  - {fileID: 8300000, guid: 64052350e1c642c46ae3f682ec7fabc5, type: 3}
   timeSinceLastAttack: Infinity
 --- !u!114 &1327672660
 MonoBehaviour:
