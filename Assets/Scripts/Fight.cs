@@ -46,8 +46,8 @@ public class Fight : MonoBehaviour
             {
                 if (!hasPlayed)
                 {
-                    randomSoundClip = Random.Range(0, attackSounds.Length);
-                    source.PlayOneShot(attackSounds[randomSoundClip]);
+                   // randomSoundClip = Random.Range(0, attackSounds.Length -1);
+                    source.PlayOneShot(attackSounds[0]);
                     hasPlayed = true;
                 }
                 Vector3 offSet = new Vector3(0, offset, 0);
@@ -57,7 +57,10 @@ public class Fight : MonoBehaviour
         }
 
     }
-
+    void SwordSwingSound()
+    {
+        source.PlayOneShot(attackSounds[1]);
+    }
     //Animation event for stab
     void Stab()
     {
@@ -66,8 +69,8 @@ public class Fight : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(stabAim.transform.position, transform.TransformDirection(Vector3.forward), out hit, stabRange, layer))
         {
-            randomSoundClip = Random.Range(0, attackSounds.Length);
-            source.PlayOneShot(attackSounds[randomSoundClip]);
+            //randomSoundClip = Random.Range(0, attackSounds.Length -1);
+            source.PlayOneShot(attackSounds[0]);
             Vector3 offSet = new Vector3(0, offset, 0);
 
             hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);
