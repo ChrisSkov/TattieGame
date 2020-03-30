@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fight : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class Fight : MonoBehaviour
             {
                 if (!hasPlayed)
                 {
-                   // randomSoundClip = Random.Range(0, attackSounds.Length -1);
+                    // randomSoundClip = Random.Range(0, attackSounds.Length -1);
                     source.PlayOneShot(attackSounds[0]);
                     hasPlayed = true;
                 }
@@ -69,12 +70,22 @@ public class Fight : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(stabAim.transform.position, transform.TransformDirection(Vector3.forward), out hit, stabRange, layer))
         {
-            //randomSoundClip = Random.Range(0, attackSounds.Length -1);
-            source.PlayOneShot(attackSounds[0]);
-            Vector3 offSet = new Vector3(0, offset, 0);
+            if (hit.rigidbody.gameObject.tag == "RestartGame")
+            {
+                print("click");
+                SceneManager.LoadScene(0);
+                return;
+            }
+            else
+            {
 
-            hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);
-            var bloodClone = Instantiate(bloodEffect, hit.point, hit.rigidbody.gameObject.transform.rotation);
+                //randomSoundClip = Random.Range(0, attackSounds.Length -1);
+                source.PlayOneShot(attackSounds[0]);
+                Vector3 offSet = new Vector3(0, offset, 0);
+
+                hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);
+                var bloodClone = Instantiate(bloodEffect, hit.point, hit.rigidbody.gameObject.transform.rotation);
+            }
         }
     }
 
