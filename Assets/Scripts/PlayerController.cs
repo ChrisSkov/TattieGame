@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     Health health;
     RigidBodyMovement rbMove;
     FlameThrowing flame;
     ShootTPv2 shootTP;
     CamController camControl;
-    AudioControl audioControl;
     Fight fight;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
         flame = GetComponent<FlameThrowing>();
         shootTP = GetComponent<ShootTPv2>();
         camControl = GetComponent<CamController>();
-        audioControl = GetComponent<AudioControl>();
     }
 
 
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
             flame.enabled = false;
             shootTP.enabled = false;
             camControl.enabled = false;
-            audioControl.enabled = false;
         }
     }
 

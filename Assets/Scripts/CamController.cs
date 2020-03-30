@@ -19,14 +19,10 @@ public class CamController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-void Update()
-{
-      //  Cursor.visible = true;
 
-}
     private void LateUpdate()
     {
         CamControl();
