@@ -11,7 +11,7 @@ public class FlameThrowing : MonoBehaviour
     [SerializeField] float flameDamage = 10f;
     [SerializeField] float tickTime = 0.2f;
     [SerializeField] float flameRadius = 3f;
-    [SerializeField] float attackToFlameThreshold = .4f;
+    [SerializeField] float attackToFlameThreshold = .6f;
     Animator anim;
     [Header("Timer")]
     [SerializeField] float timer = 0;
@@ -25,6 +25,10 @@ public class FlameThrowing : MonoBehaviour
     void Update()
     {
         OverlapCapsule();
+        if(anim.GetBool("Flaming") && anim.GetBool("canFlame") == false)
+        {
+            StopFlame();
+        }
     }
     void ActivateFlame()
     {
@@ -37,7 +41,7 @@ public class FlameThrowing : MonoBehaviour
     public void OverlapCapsule()
     {
         LayerMask layer = LayerMask.GetMask("Enemy");
-        if (Input.GetKey(KeyCode.Q) && GetComponent<Fight>().timeSinceLastAttack > attackToFlameThreshold)
+        if (Input.GetKey(KeyCode.Q) && GetComponent<Fight>().timeSinceLastAttack > attackToFlameThreshold && anim.GetBool("canFlame"))
         {
             anim.SetBool("Flaming", true);
             timer += Time.deltaTime;

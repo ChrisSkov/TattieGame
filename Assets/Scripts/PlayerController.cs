@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     ShootTPv2 shootTP;
     CamController camControl;
     Fight fight;
+    [SerializeField] GameObject gameMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +19,27 @@ public class PlayerController : MonoBehaviour
         health = GetComponent<Health>();
         rbMove = GetComponent<RigidBodyMovement>();
         flame = GetComponent<FlameThrowing>();
-        shootTP = GetComponent<ShootTPv2>();
         camControl = GetComponent<CamController>();
     }
 
 
     void Update()
     {
-        if (health.IsDead())
+
+        if (health.IsDead() || gameMenu.gameObject.activeSelf == true)
         {
             fight.enabled = false;
             rbMove.enabled = false;
             flame.StopFlame();
             flame.enabled = false;
-            shootTP.enabled = false;
             camControl.enabled = false;
+        }
+        else
+        {
+            fight.enabled = true;
+            rbMove.enabled = true;
+            flame.enabled = true;
+            camControl.enabled = true;
         }
     }
 

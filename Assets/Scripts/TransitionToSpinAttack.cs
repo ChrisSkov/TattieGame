@@ -15,7 +15,7 @@ public class TransitionToSpinAttack : StateMachineBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            animator.gameObject.GetComponent<FlameThrowing>().StopFlame();
+           // animator.SetBool("canFlame", false);
             animator.SetTrigger("spinAttack");
         }
     }

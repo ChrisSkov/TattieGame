@@ -86,6 +86,8 @@
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\FlameDisable.cs" />
+     <Compile Include="Assets\FlameThing.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />

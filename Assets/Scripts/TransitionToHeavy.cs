@@ -15,6 +15,7 @@ public class TransitionToHeavy : StateMachineBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
+           // animator.SetBool("canFlame", false);
             animator.SetTrigger("heavyAttack");
         }
     }

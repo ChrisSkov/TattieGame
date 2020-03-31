@@ -13,10 +13,11 @@ public class TransitionToStab : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(Input.GetKeyDown(KeyCode.E))
-       {
-           animator.SetTrigger("stab");
-       }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+          //  animator.SetBool("canFlame", false);
+            animator.SetTrigger("stab");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

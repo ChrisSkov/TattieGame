@@ -10,11 +10,11 @@ public class TransitionToCombo : StateMachineBehaviour
     //    
     //}
 
-   override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (Input.GetKey(KeyCode.Mouse0) && Input.GetKey(KeyCode.Mouse1))
         {
-            animator.gameObject.GetComponent<FlameThrowing>().StopFlame();
+           // animator.SetBool("canFlame", false);
             animator.SetTrigger("comboAttack");
         }
     }
