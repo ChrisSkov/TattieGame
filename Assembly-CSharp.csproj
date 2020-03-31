@@ -86,11 +86,10 @@
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <Compile Include="Assets\AudioManager.cs" />
-     <Compile Include="Assets\NavigateUI.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\CamController.cs" />
      <Compile Include="Assets\Scripts\ChickenBehavior.cs" />
      <Compile Include="Assets\Scripts\ChickenManager.cs" />
@@ -104,6 +103,7 @@
      <Compile Include="Assets\Scripts\HeavyAttack.cs" />
      <Compile Include="Assets\Scripts\IgnoreCollision.cs" />
      <Compile Include="Assets\Scripts\LightAttack.cs" />
+     <Compile Include="Assets\Scripts\NavigateUI.cs" />
      <Compile Include="Assets\Scripts\PatrolPath.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
