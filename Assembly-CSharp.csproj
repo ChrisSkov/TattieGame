@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AssetPacks\AIControl.cs" />
+     <Compile Include="Assets\AssetPacks\AllSkyFree\AllSkyFree_Menu.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -132,6 +133,7 @@
      <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\AssetPacks\Animations\README - Usage Rights for these assets 1.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\AssetPacks\AllSkyFree\AllSkyFree_Readme.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\AssetPacks\nnj3de_CartoonFantasyWeaponMinipack\README.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
