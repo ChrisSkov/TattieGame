@@ -15,6 +15,7 @@ public class Fight : MonoBehaviour
     [SerializeField] float radius = 1f;
     [SerializeField] GameObject bloodEffect;
     [SerializeField] AudioClip[] attackSounds;
+    [SerializeField] AudioClip[] swingNoises;
     AudioSource source;
     int randomSoundClip;
     public float timeSinceLastAttack = Mathf.Infinity;
@@ -61,6 +62,12 @@ public class Fight : MonoBehaviour
     void SwordSwingSound()
     {
         source.PlayOneShot(attackSounds[1]);
+    }
+
+    void SwingNoise()
+    {
+        source.PlayOneShot(swingNoises[Random.Range(0,swingNoises.Length)]);
+
     }
     //Animation event for stab
     void Stab()
