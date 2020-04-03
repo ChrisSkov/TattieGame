@@ -15,7 +15,7 @@ public class TransitionToLight : StateMachineBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-           // animator.SetBool("canFlame", false);
+           // animator.gameObject.GetComponent<FlameThrowing>().StopFlame();
             animator.SetTrigger("lightAttack");
         }
     }

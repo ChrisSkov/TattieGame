@@ -14,7 +14,6 @@ public class TransitionToCombo : StateMachineBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && Input.GetKey(KeyCode.Mouse1))
         {
-           // animator.SetBool("canFlame", false);
             animator.SetTrigger("comboAttack");
         }
     }

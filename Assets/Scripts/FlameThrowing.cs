@@ -11,7 +11,6 @@ public class FlameThrowing : MonoBehaviour
     [SerializeField] float flameDamage = 10f;
     [SerializeField] float tickTime = 0.2f;
     [SerializeField] float flameRadius = 3f;
-    [SerializeField] float attackToFlameThreshold = .6f;
     Animator anim;
     [Header("Timer")]
     [SerializeField] float timer = 0;
@@ -24,11 +23,9 @@ public class FlameThrowing : MonoBehaviour
     }
     void Update()
     {
+      
         OverlapCapsule();
-        if(anim.GetBool("Flaming") && anim.GetBool("canFlame") == false)
-        {
-            StopFlame();
-        }
+
     }
     void ActivateFlame()
     {
@@ -41,18 +38,16 @@ public class FlameThrowing : MonoBehaviour
     public void OverlapCapsule()
     {
         LayerMask layer = LayerMask.GetMask("Enemy");
-        if (Input.GetKey(KeyCode.Q) && GetComponent<Fight>().timeSinceLastAttack > attackToFlameThreshold && anim.GetBool("canFlame"))
+        if (Input.GetKey(KeyCode.Q) && !anim.GetBool("fighting"))
         {
             anim.SetBool("Flaming", true);
             timer += Time.deltaTime;
             foreach (Collider c in Physics.OverlapCapsule(flameObj.transform.position, flameAim.transform.position, flameRadius, layer))
             {
-                print("hej");
                 GameObject enemy = c.gameObject;
                 if (c.gameObject != null && timer >= tickTime)
                 {
                     Health enemyHealth = enemy.GetComponent<Health>();
-                    print("step 2");
                     enemyHealth.TakeDamage(flameDamage);
                     if (c.gameObject.CompareTag("chicken"))
                     {
@@ -72,6 +67,7 @@ public class FlameThrowing : MonoBehaviour
     {
         anim.SetBool("Flaming", false);
         flameObj.SetActive(false);
+
     }
 
     void OnDrawGizmos()

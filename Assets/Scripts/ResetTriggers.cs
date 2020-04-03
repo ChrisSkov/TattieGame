@@ -13,7 +13,7 @@ public class ResetTriggers : StateMachineBehaviour
         animator.ResetTrigger("runJumpAttack");
         animator.ResetTrigger("comboAttack");
         animator.ResetTrigger("spinAttack");
-       // animator.SetBool("canFlame", true);
+        animator.SetBool("fighting", false);
     }
 
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
@@ -42,11 +42,10 @@ public class ResetTriggers : StateMachineBehaviour
     //}
 
     // OnStateMachineEnter is called when entering a state machine via its Entry Node
-    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    {
-        animator.SetBool("canFlame", false);
+    // override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
+    // {
 
-    }
+    // }
 
     // OnStateMachineExit is called when exiting a state machine via its Exit Node
     // override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)

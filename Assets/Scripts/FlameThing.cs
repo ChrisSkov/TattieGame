@@ -7,7 +7,6 @@ public class FlameThing : StateMachineBehaviour
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-     animator.SetBool("canFlame", true);  
     }
 
     // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine

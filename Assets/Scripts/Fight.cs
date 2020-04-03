@@ -37,8 +37,8 @@ public class Fight : MonoBehaviour
     {
         damage = newDamage;
     }
-    //Animation event for Light Attack
-    void Hit()
+    //Animation event for AOE Attack
+    void AOEMeleeAttack()
     {
         bool hasPlayed = false;
         LayerMask layer = LayerMask.GetMask("Enemy");
@@ -48,7 +48,6 @@ public class Fight : MonoBehaviour
             {
                 if (!hasPlayed)
                 {
-                    // randomSoundClip = Random.Range(0, attackSounds.Length -1);
                     source.PlayOneShot(attackSounds[0]);
                     hasPlayed = true;
                 }
@@ -66,33 +65,23 @@ public class Fight : MonoBehaviour
 
     void SwingNoise()
     {
-        source.PlayOneShot(swingNoises[Random.Range(0,swingNoises.Length)]);
+        source.PlayOneShot(swingNoises[Random.Range(0, swingNoises.Length)]);
 
     }
     //Animation event for stab
-    void Stab()
+    void SingleTargetAttack()
     {
         LayerMask layer = LayerMask.GetMask("Enemy");
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(stabAim.transform.position, transform.TransformDirection(Vector3.forward), out hit, stabRange, layer))
         {
-            if (hit.rigidbody.gameObject.tag == "RestartGame")
-            {
-                print("click");
-                SceneManager.LoadScene(0);
-                return;
-            }
-            else
-            {
-
-                //randomSoundClip = Random.Range(0, attackSounds.Length -1);
                 source.PlayOneShot(attackSounds[0]);
                 Vector3 offSet = new Vector3(0, offset, 0);
 
-                hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(stabDamage);
+                hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(damage);
                 var bloodClone = Instantiate(bloodEffect, hit.point, hit.rigidbody.gameObject.transform.rotation);
-            }
+            
         }
     }
 

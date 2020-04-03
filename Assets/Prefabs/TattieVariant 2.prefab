@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4970,7 +4970,6 @@ MonoBehaviour:
   flameDamage: 10
   tickTime: 0.2
   flameRadius: 2
-  attackToFlameThreshold: 0.8
   timer: 0
 --- !u!114 &451998763
 MonoBehaviour:
@@ -10534,14 +10533,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8206207291387881319}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.47, z: 0}
+  m_LocalRotation: {x: -0.1644438, y: 0.010862869, z: 0.0018110983, w: 0.98632497}
+  m_LocalPosition: {x: 0, y: 2.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4188005740352907293}
   m_Father: {fileID: 1333174066656605414}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -18.931002, y: 1.2620001, z: 0}
 --- !u!1001 &1918800630373661404
 PrefabInstance:
   m_ObjectHideFlags: 0

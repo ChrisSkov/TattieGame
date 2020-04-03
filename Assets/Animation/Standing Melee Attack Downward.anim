@@ -93216,7 +93216,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.8666667
-    functionName: Stab
+    functionName: SingleTargetAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
