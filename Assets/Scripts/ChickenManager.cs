@@ -7,8 +7,8 @@ public class ChickenManager : MonoBehaviour
 {
 
     public string[] chickenNames = new string[] { "Kvisten", "Paul", "George", "Steve", "Mert", "Warløkke", "Lars", "ChrilleBob", "Berta", "Jørgen", "Preben", "Destroyer Of Worlds" };
-    [SerializeField] Text chickenCounter;
-    GameObject[] chickens;
+    [SerializeField]  Text chickenCounter;
+    public GameObject[] chickens;
     Text chickenName;
     // Start is called before the first frame update
     void Start()
@@ -22,10 +22,11 @@ public class ChickenManager : MonoBehaviour
         chickenCounter.text = string.Format("Chickens: {0}", chickens.Length);
 
         chickens = GameObject.FindGameObjectsWithTag("chicken");
+     
     }
     void NameTheChickens()
     {
-                chickens = GameObject.FindGameObjectsWithTag("chicken");
+        chickens = GameObject.FindGameObjectsWithTag("chicken");
 
         foreach (GameObject chicken in chickens)
         {

@@ -9,6 +9,7 @@ public class NavigateUI : MonoBehaviour
     [Header("Menus")]
     [SerializeField] GameObject gameMenu;
     [SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject gameOverMenu;
     [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource[] tattieSources;
@@ -27,6 +28,7 @@ public class NavigateUI : MonoBehaviour
 
         gameMenu.SetActive(false);
         optionsMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,7 +69,7 @@ public class NavigateUI : MonoBehaviour
 
     }
 
-    void CursorBehavior()
+    public void CursorBehavior()
     {
         if (gameMenu.activeSelf == true)
         {
@@ -88,6 +90,10 @@ public class NavigateUI : MonoBehaviour
     public void ShowOptionsMenu()
     {
         optionsMenu.gameObject.SetActive(true);
+    }
+    public void ShowGameOverMenu()
+    {
+        gameOverMenu.gameObject.SetActive(true);
     }
 
     public void ExitOptionsMenu()

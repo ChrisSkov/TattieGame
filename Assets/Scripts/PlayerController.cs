@@ -11,10 +11,13 @@ public class PlayerController : MonoBehaviour
     ShootTPv2 shootTP;
     CamController camControl;
     Fight fight;
+    NavigateUI navUI;
     [SerializeField] GameObject gameMenu;
+    [SerializeField] GameOver gameOverObject;
     // Start is called before the first frame update
     void Start()
     {
+        navUI = GetComponent<NavigateUI>();
         fight = GetComponent<Fight>();
         health = GetComponent<Health>();
         rbMove = GetComponent<RigidBodyMovement>();
@@ -26,8 +29,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (health.IsDead() || gameMenu.gameObject.activeSelf == true)
+
+        if (gameOverObject.IsGameOver() || gameMenu.gameObject.activeSelf == true)
         {
+            navUI.ShowGameOverMenu();
+            navUI.CursorBehavior();
             fight.enabled = false;
             rbMove.enabled = false;
             flame.StopFlame();
