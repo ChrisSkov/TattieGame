@@ -49,7 +49,7 @@ public class AIControl : MonoBehaviour
             return;
         }
         UpdateTimers();
-        PatrolBehaviour();
+        //PatrolBehaviour();
         PlayerInChaseRange();
         ChaseBehavior();
         AttackBehavior();
@@ -63,25 +63,25 @@ public class AIControl : MonoBehaviour
         timeSinceArrivedAtWaypoint += Time.deltaTime;
     }
 
-    private void PatrolBehaviour()
-    {
-        Vector3 nextPosition = guardPosition;
+    // private void PatrolBehaviour()
+    // {
+    //     Vector3 nextPosition = guardPosition;
 
-        if (patrolPath != null)
-        {
-            if (AtWaypoint())
-            {
-                timeSinceArrivedAtWaypoint = 0;
-                CycleWaypoint();
-            }
-            nextPosition = GetCurrentWaypoint();
-        }
+    //     if (patrolPath != null)
+    //     {
+    //         if (AtWaypoint())
+    //         {
+    //             timeSinceArrivedAtWaypoint = 0;
+    //             CycleWaypoint();
+    //         }
+    //         nextPosition = GetCurrentWaypoint();
+    //     }
 
-        if (timeSinceArrivedAtWaypoint > waypointDwellTime)
-        {
-            agent.SetDestination(nextPosition);
-        }
-    }
+    //     if (timeSinceArrivedAtWaypoint > waypointDwellTime)
+    //     {
+    //         agent.SetDestination(nextPosition);
+    //     }
+    // }
 
     private Vector3 GetCurrentWaypoint()
     {

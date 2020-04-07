@@ -93,6 +93,7 @@ public class NavigateUI : MonoBehaviour
     }
     public void ShowGameOverMenu()
     {
+        gameMenu.gameObject.SetActive(true);
         gameOverMenu.gameObject.SetActive(true);
     }
 

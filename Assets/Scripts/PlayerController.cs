@@ -30,24 +30,36 @@ public class PlayerController : MonoBehaviour
     {
 
 
-        if (gameOverObject.IsGameOver() || gameMenu.gameObject.activeSelf == true)
+        if (gameMenu.gameObject.activeSelf == true)
         {
-            navUI.ShowGameOverMenu();
-            navUI.CursorBehavior();
-            fight.enabled = false;
-            rbMove.enabled = false;
-            flame.StopFlame();
-            flame.enabled = false;
-            camControl.enabled = false;
+
+            DisableControl();
         }
         else
         {
-            fight.enabled = true;
-            rbMove.enabled = true;
-            flame.enabled = true;
-            camControl.enabled = true;
+            EnableControl();
         }
+
+        // if (gameOverObject.IsGameOver())
+        // {
+        //     navUI.ShowGameOverMenu();
+        //     navUI.CursorBehavior();
+        //     DisableControl();
+        // }
     }
-
-
+    public void DisableControl()
+    {
+        fight.enabled = false;
+        rbMove.enabled = false;
+        flame.StopFlame();
+        flame.enabled = false;
+        camControl.enabled = false;
+    }
+    public void EnableControl()
+    {
+        fight.enabled = true;
+        rbMove.enabled = true;
+        flame.enabled = true;
+        camControl.enabled = true;
+    }
 }

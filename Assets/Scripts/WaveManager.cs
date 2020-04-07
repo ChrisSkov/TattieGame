@@ -29,7 +29,6 @@ public class WaveManager : MonoBehaviour
 
 
         SpawnEnemy();
-
         RandomSpawnPlacement();
     }
 
@@ -56,7 +55,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        foreach(var s in spawnPoints)
+        foreach (var s in spawnPoints)
         {
             Gizmos.color = Color.black;
             Gizmos.DrawWireSphere(s.transform.position, radius);

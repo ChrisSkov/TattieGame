@@ -8,13 +8,14 @@ public class AIMover : MonoBehaviour
 {
     NavMeshAgent agent;
     [SerializeField] float chaseRange = 10f;
-
+    bool hasWarped = false;
     Health playerHP;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         playerHP = GameObject.FindWithTag("Player").GetComponent<Health>();
+        //agent.Warp(transform.position);
 
     }
 
@@ -26,6 +27,11 @@ public class AIMover : MonoBehaviour
 
     public void MoveToTarget(Health target)
     {
+        if (!hasWarped)
+        {
+            agent.Warp(agent.transform.position);
+            hasWarped = true;
+        }
         agent.SetDestination(target.transform.position);
     }
 

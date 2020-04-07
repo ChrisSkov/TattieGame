@@ -118920,7 +118920,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.76666665
-    functionName: Stab
+    functionName: SingleTargetAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -118941,7 +118941,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.5
-    functionName: Hit
+    functionName: AOEMeleeAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
