@@ -73,9 +73,9 @@ public class FlameThrowing : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.black;
-        Gizmos.DrawLine(flameObj.transform.position, flameAim.position);
         Gizmos.DrawWireSphere(flameAim.position, flameRadius);
         Gizmos.DrawWireSphere(flameObj.transform.position, flameRadius);
+        Gizmos.DrawLine(flameObj.transform.position, flameAim.position);
     }
 
 

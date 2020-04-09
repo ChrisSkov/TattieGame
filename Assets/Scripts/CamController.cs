@@ -27,19 +27,19 @@ public class CamController : MonoBehaviour
     {
         CamControl();
     }
+
+
     public void CamControl()
     {
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
         mouseY = Mathf.Clamp(mouseY, clampMin, clampMax);
 
-        cam.transform.LookAt(cameraArm);
 
-        cameraArm.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         projectileSocket.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+        cam.transform.LookAt(cameraArm);
         flame.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         transform.rotation = Quaternion.Euler(0, mouseX, 0);
+        cameraArm.rotation = Quaternion.Euler(mouseY,  mouseX, 0);
     }
-
-
 }
