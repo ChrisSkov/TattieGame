@@ -14,34 +14,26 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private float sunRise = 7;
     [SerializeField] private float sunSet = 18;
     [SerializeField] private bool nightTime;
-    [SerializeField] private float nightLerpTime = 0.8f;
-    [SerializeField] Material moon;
-    [SerializeField] Material orgMoon;
-    [SerializeField] Material hiddenMoon;
-
-
-    private void Start()
-    {
-       
-
-    }
+    [SerializeField] private bool timePause = false;
 
     private void Update()
     {
         if (preset == null)
             return;
+        if (!timePause)
+        {
+            if (Application.isPlaying)
+            {
+                timeOfDay += Time.deltaTime / hourLength;
+                timeOfDay %= 24; //Modulus to ensure always between 0-24
+                UpdateLighting(timeOfDay / 24f);
+            }
+            else
+            {
+                UpdateLighting(timeOfDay / 24f);
+            }
+        }
 
-        if (Application.isPlaying)
-        {
-            //(Replace with a reference to the game time)
-            timeOfDay += Time.deltaTime / hourLength;
-            timeOfDay %= 24; //Modulus to ensure always between 0-24
-            UpdateLighting(timeOfDay / 24f);
-        }
-        else
-        {
-            UpdateLighting(timeOfDay / 24f);
-        }
         if (timeOfDay <= sunRise || timeOfDay >= sunSet)
         {
             nightTime = true;
@@ -50,11 +42,11 @@ public class LightingManager : MonoBehaviour
         {
             nightTime = false;
         }
-
-
-
     }
-
+    public float GetHourLength()
+    {
+        return hourLength;
+    }
     public bool IsNightTime()
     {
         return nightTime;
