@@ -50,4 +50,5 @@ public class AIMover : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
+    
 }

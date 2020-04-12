@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
     [Header("For debugging")]
     [Tooltip("Radius of gizmo")]
     [SerializeField] float radius = .5f;
-    [Tooltip("Are we currently spawning enemies?")]
+   // [Tooltip("Are we currently spawning enemies?")]
     [SerializeField] bool spawning = false;
 
     // Start is called before the first frame update
@@ -27,9 +27,11 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
 
-
-        SpawnEnemy();
-        RandomSpawnPlacement();
+        if (spawning)
+        {
+            SpawnEnemy();
+            RandomSpawnPlacement();
+        }
     }
 
     int RandomSpawnPlacement()
@@ -41,7 +43,6 @@ public class WaveManager : MonoBehaviour
     void SpawnEnemy()
     {
         timer += Time.deltaTime;
-        //  spawning = true;
         foreach (var enemy in enemies)
         {
             GameObject spawnPoint = spawnPoints[RandomSpawnPlacement()];
