@@ -86,6 +86,8 @@
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Laterns and candles\scripts\CameraFacing.cs" />
+     <Compile Include="Assets\Laterns and candles\scripts\ExtendedFlycam.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />
@@ -132,6 +134,7 @@
      <Compile Include="Assets\Scripts\TransitionToStab.cs" />
      <Compile Include="Assets\Scripts\WaveManager.cs" />
      <Compile Include="Assets\Scripts\jump.cs" />
+     <Compile Include="Assets\TheGamingPeople\Shed Bridge Tools and Fences\Scripts\CameraController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\AssetPacks\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
@@ -156,7 +159,6 @@
      <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\AssetPacks\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
-     <None Include="Assets\SkySerie Freebie\Hdri setup.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Fonts\OpenSans\License!.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
