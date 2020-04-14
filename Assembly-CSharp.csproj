@@ -46,6 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AssetPacks\AIControl.cs" />
+     <Compile Include="Assets\AssetPacks\Laterns and candles\scripts\CameraFacing.cs" />
+     <Compile Include="Assets\AssetPacks\Laterns and candles\scripts\ExtendedFlycam.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -86,8 +88,7 @@
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\AssetPacks\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <Compile Include="Assets\Laterns and candles\scripts\CameraFacing.cs" />
-     <Compile Include="Assets\Laterns and candles\scripts\ExtendedFlycam.cs" />
+     <Compile Include="Assets\AssetPacks\TheGamingPeople\Shed Bridge Tools and Fences\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\AICombat.cs" />
      <Compile Include="Assets\Scripts\AIMover.cs" />
      <Compile Include="Assets\Scripts\AimControl.cs" />
@@ -134,7 +135,6 @@
      <Compile Include="Assets\Scripts\TransitionToStab.cs" />
      <Compile Include="Assets\Scripts\WaveManager.cs" />
      <Compile Include="Assets\Scripts\jump.cs" />
-     <Compile Include="Assets\TheGamingPeople\Shed Bridge Tools and Fences\Scripts\CameraController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\AssetPacks\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
@@ -143,6 +143,7 @@
      <None Include="Assets\AssetPacks\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\AssetPacks\Animations\README - Usage Rights for these assets 1.txt" />
+     <None Include="Assets\AssetPacks\Bench\ReadMe.txt" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\AssetPacks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\AssetPacks\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />

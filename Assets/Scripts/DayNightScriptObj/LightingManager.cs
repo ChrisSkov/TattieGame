@@ -8,16 +8,24 @@ public class LightingManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
+    private GameObject[] lampPosts;
+    private Light[] lampLights;
     [Header("Variables")]
     [SerializeField, Range(0, 24)] private float timeOfDay;
+    [SerializeField] private float LightIntensity;
     [SerializeField] private float hourLength = 4;
     [SerializeField] private float sunRise = 7;
     [SerializeField] private float sunSet = 18;
     [SerializeField] private bool nightTime;
     [SerializeField] private bool timePause = false;
 
+    private void Start()
+    {
+        lampPosts = GameObject.FindGameObjectsWithTag("Lamp");
+    }
     private void Update()
     {
+        LampOnOff();
         if (preset == null)
             return;
         if (!timePause)
@@ -43,6 +51,23 @@ public class LightingManager : MonoBehaviour
             nightTime = false;
         }
     }
+
+    private void LampOnOff()
+    {
+        foreach (GameObject lamp in lampPosts)
+        {
+            Light lampLight = lamp.GetComponentInChildren<Light>();
+            if (IsNightTime())
+            {
+               lampLight.intensity = LightIntensity;
+            }
+            else
+            {
+                lampLight.intensity = 0f;
+            }
+        }
+    }
+
     public float GetHourLength()
     {
         return hourLength;

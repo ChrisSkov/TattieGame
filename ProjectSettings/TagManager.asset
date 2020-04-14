@@ -9,6 +9,7 @@ TagManager:
   - chicken
   - RestartGame
   - Star
+  - Lamp
   layers:
   - Default
   - TransparentFX

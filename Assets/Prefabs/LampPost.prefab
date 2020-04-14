@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2511163881598421980}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &946109497
 Light:
@@ -125,7 +125,7 @@ Transform:
   - {fileID: 2510986952727924524}
   - {fileID: 2506216516061550904}
   m_Father: {fileID: 2511163881598421980}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2495224079096399180
 MeshFilter:
@@ -398,7 +398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2511163881598421980}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2495026521763116424
 MeshFilter:
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 1204408141013327}
   m_Layer: 0
   m_Name: LampPost
-  m_TagString: Untagged
+  m_TagString: Lamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,12 +473,12 @@ Transform:
   m_GameObject: {fileID: 2509467660487546824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.3473206, y: 91.1, z: 35.0804}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalScale: {x: 1.6000001, y: 1.6, z: 1.6000001}
   m_Children:
+  - {fileID: 946109496}
   - {fileID: 2505876544455136046}
   - {fileID: 2505723198757750330}
   - {fileID: 2510909934734783414}
-  - {fileID: 946109496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -525,7 +525,7 @@ Transform:
   m_LocalScale: {x: 0.26376036, y: 0.26376036, z: 0.26376036}
   m_Children: []
   m_Father: {fileID: 2511163881598421980}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2499409300339410254
 MeshFilter:
