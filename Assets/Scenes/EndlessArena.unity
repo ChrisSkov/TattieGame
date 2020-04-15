@@ -21502,6 +21502,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6454555349823817691, guid: e42fd1222b740884f9fe4731f8c1383d,
+        type: 3}
+      propertyPath: timer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454555349823817691, guid: e42fd1222b740884f9fe4731f8c1383d,
+        type: 3}
+      propertyPath: spawning
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6454555349963226559, guid: e42fd1222b740884f9fe4731f8c1383d,
         type: 3}
       propertyPath: playerHP
@@ -21572,7 +21582,8 @@ PrefabInstance:
       propertyPath: chickenCounter
       value: 
       objectReference: {fileID: 1820192103}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617316449194576319, guid: e42fd1222b740884f9fe4731f8c1383d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e42fd1222b740884f9fe4731f8c1383d, type: 3}
 --- !u!114 &6454555349963226559 stripped
 MonoBehaviour:
